@@ -28,7 +28,7 @@
     }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
 
     header {
       position: sticky; top: 0; z-index: 50;
@@ -49,7 +49,7 @@
 
     nav { display: flex; gap: 4px; }
     nav a {
-      color: var(--muted); font-size: 14px; padding: 6px 10px; border-radius: 8px;
+      color: var(--muted); font-size: 14px; padding: 6px 10px; border-radius: 6px;
       font-weight: 500; transition: color .2s, background-color .2s;
     }
     nav a:hover {
@@ -63,7 +63,7 @@
       padding: 8px 12px; border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--card); color: var(--fg);
-      font-size: 13px; font-weight: 500;
+      font-size: 14px; font-weight: 500;
       gap: 6px; cursor: pointer; user-select: none;
       transition: border-color .2s, background-color .2s;
     }
@@ -109,7 +109,7 @@
 
     .pubs { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
     .pub {
-      padding: 16px; border-radius: 12px;
+      padding: 16px; border-radius: 10px;
       background: var(--card); border: 1px solid var(--border);
       box-shadow: var(--shadow);
       transition: transform .2s, box-shadow .2s;
@@ -178,6 +178,7 @@
           <div class="card">
             <div style="display:flex; align-items:center; gap: 16px;">
               <img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="cloneiq.png" alt="CloneIQ">
+              <!-- <img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="https://picsum.photos/200" alt="Profile picture of CloneIQ"> -->
               <div>
                 <h2 style="margin:0; font-size:20px;">Lijun Liu (刘利军)</h2>
                 <p style="margin:4px 0 0; font-size:14px; color: var(--muted);" data-i18n="sidebar_role">Associate Professor / M.S. Supervisor</p>
@@ -203,6 +204,11 @@
                   <span data-i18n="kv_email">Email</span>
                   <span><a href="mailto:cloneiq@kust.edu.cn">cloneiq@kust.edu.cn</a></span>
                 </li>
+                <li>
+                  <span></span>
+                  <span><a href="mailto:cloneiq@126.com">cloneiq@126.com</a></span>
+    
+                </li>
               </ul>
             </div>
 
@@ -218,9 +224,18 @@
           <div class="card" style="margin-top: 10px;">
             <h3 data-i18n="keywords_title">Keywords</h3>
             <div class="pills">
-              <span class="pill" data-i18n="kw1">Multimodal Understanding & Generation</span>
-              <span class="pill" data-i18n="kw2">Interactive Med-VQA & Clinical Agents</span>
-              <span class="pill" data-i18n="kw3">Radiology Knowledge Graphs & Augmentation</span>
+              <span class="pill" data-i18n="kw1">Deep Learning</span>
+              <span class="pill" data-i18n="kw2">Causal Machine Learning</span>
+              <span class="pill" data-i18n="kw3">Vision-Language Models and Agents</span>
+              <span class="pill" data-i18n="kw4">Artificial Intelligence in Medicine</span>
+              <span class="pill" data-i18n="kw5">Medical Image Analysis</span>
+              <span class="pill" data-i18n="kw6">Computer Aided Diagnosis</span>
+              <span class="pill" data-i18n="kw7">Medical Image Segmentation</span>
+              <span class="pill" data-i18n="kw8">Medical Report Generation</span>
+              <span class="pill" data-i18n="kw9">Medical Visual Question Answering</span>
+              <span class="pill" data-i18n="kw10">Medical Knowledge Graph</span>
+              <span class="pill" data-i18n="kw11">Cross-modal Feature Fusion</span>
+
             </div>
           </div>
         </div>
@@ -231,8 +246,10 @@
         <section id="about" class="card section">
           <h2 data-i18n="about_title">Biography</h2>
           <div style="display:grid; gap:12px; color: var(--muted); font-size: 15px;">
-            <p class="lang-zh" style="margin:0">面向医学影像与多模态大模型，我聚焦可控生成与可信推理，研究交互式医学视觉问答、报告生成及知识增强决策支持，推动可追溯、可校验、可落地的临床智能体。</p>
-            <p class="lang-en" style="margin:0; font-style: italic; font-size: 14px;">I work on medical imaging and multimodal foundation models, focusing on controllable generation and trustworthy reasoning for interactive Med-VQA, report generation, and knowledge-augmented decision support toward auditable, clinically deployable agents.</p>
+            <p class="lang-zh" style="margin:0"> 刘利军，工学博士，昆明理工大学信息工程与自动化学院/人工智能产业学院副教授、硕士生导师。长期从事人工智能与医学影像交叉领域的科研与教学，研究方向聚焦机器学习与深度学习、医学大模型、智能医学成像技术、医学影像智能诊断与报告生成、医学视觉问答与临床对话，以及医学信息集成与放射学知识图谱等。主持或参与国家自然科学基金、科技部及省部级科研项目10余项，牵头建设“智能医学影像综合服务实验平台”。担任国家自然科学基金项目评审人、教育部本硕博学位论文评审人，并为 Engineering Applications of Artificial Intelligence、Expert Systems With Applications、Computer Methods and Programs in Biomedicine、Neural Networks、Biomedical Signal Processing and Control、Information Fusion、Image and Vision Computing 等国际期刊审稿。以第一或通讯作者在 IEEE TMI、Medical Image Analysis 等国际知名期刊及 BIBM、ICIC 等重要会议发表论文20余篇（SCI/EI收录10余篇），授权发明专利10余项。</p>
+            <p class="lang-en" style="margin:0; font-style: italic; font-size: 14px;">           
+              Lijun Liu received his Ph.D. degree in Engineering and is currently an Associate Professor and M.S. supervisor at the School of Information Engineering and Automation / AI Industry College, Kunming University of Science and Technology. His research and teaching focus on the interdisciplinary area of artificial intelligence and medical imaging, with interests in machine learning and deep learning, medical foundation models, intelligent medical imaging technologies, AI-driven medical image diagnosis and report generation, medical visual question answering and clinical dialogue, as well as medical information integration and radiological knowledge graphs. He has led or participated in more than ten research projects funded by the National Natural Science Foundation of China, the Ministry of Science and Technology, and provincial agencies, and spearheaded the development of an Intelligent Medical Imaging Integrated Service Platform. He serves as a reviewer for the National Natural Science Foundation of China and as a thesis evaluator for the Ministry of Education (undergraduate, master’s, and doctoral levels), and is also a reviewer for leading international journals including Engineering Applications of Artificial Intelligence, Expert Systems with Applications, Computer Methods and Programs in Biomedicine, Neural Networks, Biomedical Signal Processing and Control, Information Fusion, and Image and Vision Computing. He has published more than 20 papers as first or corresponding author in internationally recognized journals such as IEEE Transactions on Medical Imaging and Medical Image Analysis, as well as major conferences including BIBM and ICIC, with over ten papers indexed by SCI/EI, and holds more than ten granted invention patents.
+            </p>
           </div>
         </section>
 
@@ -240,15 +257,15 @@
           <h2 data-i18n="research_title">Research Interests</h2>
           <div style="display:grid; gap:12px;">
             <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r1_title">Multimodal Understanding & Generation</h3>
+              <h3 style="margin:0; font-size: 15px;" data-i18n="r1_title">Multimodal Understanding and Generation</h3>
               <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r1_desc">Unified vision-language representation and multi-task learning across classification/detection/segmentation and report generation, emphasizing alignment, structured knowledge injection, and factual consistency control.</p>
             </div>
             <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r2_title">Interactive Med-VQA & Clinical Conversational Agents</h3>
+              <h3 style="margin:0; font-size: 15px;" data-i18n="r2_title">Interactive Med-VQA and Clinical Conversational Agents</h3>
               <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r2_desc">Multi-turn VQA/dialogue aligned with real workflows, with tool augmentation for controllable generation and procedural decision support.</p>
             </div>
             <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r3_title">Radiology Knowledge Graphs & Knowledge Augmentation</h3>
+              <h3 style="margin:0; font-size: 15px;" data-i18n="r3_title">Radiology Knowledge Graphs and Knowledge Augmentation</h3>
               <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r3_desc">Building image–report–pathology–guideline knowledge graphs to enable retrieval/reasoning-enhanced diagnosis and QC, closing the loop from data to knowledge to decision.</p>
             </div>
           </div>
@@ -296,10 +313,19 @@
 
   <script>
     const PAPERS = [
-      {'year': 2026, 'title': 'CIMB-MVQA: Causal intervention on modality-specific biases for medical visual question answering', 'authors': 'Bing Liu; Lijun Liu; Jiaman Ding; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Medical Image Analysis', 'extra': 'Volume 107, Part B, Article 103850', 'doi': '10.1016/j.media.2025.103850', 'url': 'https://www.sciencedirect.com/science/article/pii/S1361841525003962', 'code': 'https://github.com/cloneiq/CIMB-MVQA'},
-      {'year': 2025, 'title': 'Beyond Static Knowledge: Dynamic Context-Aware Cross-Modal Contrastive Learning for Medical Visual Question Answering', 'authors': 'R. Yang; L. Liu; X. Feng; W. Peng; X. Yang', 'venue': 'IEEE Transactions on Medical Imaging', 'extra': 'Early Access, Pages 1–1', 'doi': '10.1109/TMI.2025.3617289', 'url': 'https://doi.org/10.1109/TMI.2025.3617289', 'code': 'https://github.com/cloneiq/CKRA-MedVQA'},
-      {'year': 2026, 'title': 'Redefining medical visual question answering using conditional generative diffusion models', 'authors': 'Bing Liu; Lijun Liu; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Biomedical Signal Processing and Control', 'extra': 'Volume 111, Article 108222', 'doi': '10.1016/j.bspc.2025.108222', 'url': 'https://www.sciencedirect.com/science/article/pii/S1746809425007335', 'code': 'https://github.com/cloneiq/DiffuVQA'},
-      {'year': 2024, 'title': 'Cross-Guided Attention and Combined Loss for Optimizing Gastrointestinal Visual Question Answering', 'authors': 'Q. Yang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': '2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)', 'extra': 'Pages 1296–1301', 'doi': '10.1109/BIBM62325.2024.10821854', 'url': 'https://doi.org/10.1109/BIBM62325.2024.10821854'}
+      {'year': 2026, 'title': 'CIMB-MVQA: Causal intervention on modality-specific biases for medical visual question answering (SCI 1区 Top, IF=11.6)', 'authors': 'Bing Liu; Lijun Liu; Jiaman Ding; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Medical Image Analysis', 'extra': 'Volume 107, Part B, Article 103850', 'doi': '10.1016/j.media.2025.103850', 'url': 'https://www.sciencedirect.com/science/article/pii/S1361841525003962', 'code': 'https://github.com/cloneiq/CIMB-MVQA'},
+      {'year': 2026, 'title': 'Beyond Static Knowledge: Dynamic Context-Aware Cross-Modal Contrastive Learning for Medical Visual Question Answering (SCI 1区 Top, IF=9.8)', 'authors': 'R. Yang; L. Liu; X. Feng; W. Peng; X. Yang', 'venue': 'IEEE Transactions on Medical Imaging', 'extra': 'Early Access, Pages 1–1', 'doi': '10.1109/TMI.2025.3617289', 'url': 'https://doi.org/10.1109/TMI.2025.3617289', 'code': 'https://github.com/cloneiq/CKRA-MedVQA'},
+      {'year': 2026, 'title': 'Redefining medical visual question answering using conditional generative diffusion models (SCI 2区, IF=4.9)', 'authors': 'Bing Liu; Lijun Liu; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Biomedical Signal Processing and Control', 'extra': 'Volume 111, Article 108222', 'doi': '10.1016/j.bspc.2025.108222', 'url': 'https://www.sciencedirect.com/science/article/pii/S1746809425007335', 'code': 'https://github.com/cloneiq/DiffuVQA'},
+      {'year': 2025, 'title': 'From Detection to Radiology Report Generation: Fine-Grained Multi-Modal Alignment with Semi-Supervised Learning (SCI 3区)', 'authors': 'Q. Tang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Imaging Informatics in Medicine', 'extra': 'Published online: 2025-09-16; ISSN 2948-2933', 'doi': '10.1007/s10278-025-01650-z', 'url': 'https://doi.org/10.1007/s10278-025-01650-z'},
+      {'year': 2025, 'title': 'Denoising Multi-Level Cross-Attention and Contrastive Learning for Chest Radiology Report Generation (SCI 3区)', 'authors': 'D. Zhu; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Imaging Informatics in Medicine', 'extra': 'Vol. 38, No. 5, Pages 2646–2663 (2025-10-01)', 'doi': '10.1007/s10278-025-01422-9', 'url': 'https://doi.org/10.1007/s10278-025-01422-9'},
+      {'year': 2025, 'title': 'Body Part-Aware Cross-Modal Feature Interaction Learning for Medical Vision Question Answering (CCF C)', 'authors': 'S. Dai; H. Cong; L. Liu; X. Yang; W. Peng; L. Liu', 'venue': 'Advanced Intelligent Computing Technology and Applications: 21st International Conference, ICIC 2025 (Lecture Notes in Computer Science, vol. 15846)', 'extra': 'Pages 14–23', 'doi': '10.1007/978-981-96-9794-6_2', 'url': 'https://doi.org/10.1007/978-981-96-9794-6_2'},
+      {'year': 2025, 'title': 'NSEC-YOLO: Real-time lesion detection on chest X-ray with adaptive noise suppression and global perception aggregation', 'authors': 'X. Zhang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Radiation Research and Applied Sciences', 'extra': 'Vol. 18, No. 1, Article 101281', 'doi': '10.1016/j.jrras.2024.101281', 'url': 'https://doi.org/10.1016/j.jrras.2024.101281'},
+      {'year': 2024, 'title': 'Cross-Guided Attention and Combined Loss for Optimizing Gastrointestinal Visual Question Answering (CCF B)', 'authors': 'Q. Yang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': '2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)', 'extra': 'Pages 1296–1301', 'doi': '10.1109/BIBM62325.2024.10821854', 'url': 'https://doi.org/10.1109/BIBM62325.2024.10821854'},
+      {'year': 2024, 'title': 'Multi-scale Lesion Feature Fusion and Location-Aware for Chest Multi-disease Detection (SCI 3区)', 'authors': 'Y. Yuan; L. Liu; X. Yang; L. Liu; Q. Huang', 'venue': 'Journal of Imaging Informatics in Medicine', 'extra': 'Vol. 37, No. 6, Pages 2752–2767 (2024-12-01)', 'doi': '10.1007/s10278-024-01133-7', 'url': 'https://doi.org/10.1007/s10278-024-01133-7'},
+      {'year': 2024, 'title': 'Chest radiology report generation based on cross-modal multi-scale feature fusion (SCI 4区)', 'authors': 'Y. Pan; L. Liu; X. Yang; W. Peng; Q. Huang', 'venue': 'Journal of Radiation Research and Applied Sciences', 'extra': 'Vol. 17, No. 1, Article 100823', 'doi': '10.1016/j.jrras.2024.100823', 'url': 'https://doi.org/10.1016/j.jrras.2024.100823'},
+
+      {'year': 2024, 'title': 'Anterior-posterior memory matrix model for chest radiology image report generation (EI)', 'authors': 'L. Liu; Y. Zhang; Q. Huang', 'venue': 'Journal of Jilin University (Engineering and Technology Edition)', 'extra': 'Vol. 54, No. 8, Pages 2355–2363 (2024-08-01); Language: Chinese', 'doi': '10.13229/j.cnki.jdxbgxb.20230341', 'url': 'https://doi.org/10.13229/j.cnki.jdxbgxb.20230341'},
+
     ];
 
     const $ = (sel) => document.querySelector(sel);
@@ -311,7 +337,7 @@
     const LANG_KEY = "academic_lang";
     const I18N = {
       "en": {
-        brand_sub: "Kunming University of Science and Technology · School of Information Engineering & Automation",
+        brand_sub: "Kunming University of Science and Technology · Faculty of Information Engineering and Automation",
         nav_about: "About",
         nav_research: "Research",
         nav_publications: "Publications",
@@ -327,18 +353,26 @@
         kv_email: "Email",
 
         keywords_title: "Keywords",
-        kw1: "Multimodal Understanding & Generation",
-        kw2: "Interactive Med-VQA & Clinical Agents",
-        kw3: "Radiology Knowledge Graphs & Augmentation",
+        kw1: "Deep Learning",
+        kw2: "Causal Machine Learning",
+        kw3: "Vision-Language Models and Agents",
+        kw4: "Artificial Intelligence in Medicine",
+        kw5: "Medical Image Analysis",
+        kw6: "Computer Aided Diagnosis",
+        kw7: "Medical Image Segmentation",
+        kw8: "Medical Report Generation",
+        kw9: "Medical Visual Question Answering",
+        kw10: "Medical Knowledge Graph",
+        kw11: "Cross-modal Feature Fusion",
 
         about_title: "Biography",
         research_title: "Research Interests",
-        r1_title: "Multimodal Understanding & Generation",
-        r1_desc: "Unified vision-language representation and multi-task learning across classification/detection/segmentation and report generation, emphasizing alignment, structured knowledge injection, and factual consistency control.",
-        r2_title: "Interactive Med-VQA & Clinical Conversational Agents",
-        r2_desc: "Multi-turn VQA/dialogue aligned with real workflows, with tool augmentation for controllable generation and procedural decision support.",
-        r3_title: "Radiology Knowledge Graphs & Knowledge Augmentation",
-        r3_desc: "Building image–report–pathology–guideline knowledge graphs to enable retrieval/reasoning-enhanced diagnosis and QC, closing the loop from data to knowledge to decision.",
+        r1_title: "Multimodal Understanding and Report Generation",
+        r1_desc: "Medical imaging multimodal understanding and generation centers on unified modeling of images–text–structured knowledge/clinical data to support diagnosis and optimize clinical workflows, with a particular focus on cross-modal semantic alignment and interpretability. On the understanding side, it leverages visual representation learning, fine-grained lesion localization, and region-to-sentence grounding to precisely interpret imaging content (e.g., multi-disease detection, key finding recognition, medical visual question answering, and clinical dialogue). On the generation side, exemplified by radiology report generation, lesion description, and conclusion summarization, it integrates patient history and examination data with knowledge graphs and guideline priors, using paradigms such as weak/semi-supervised learning and contrastive learning to improve the factuality, completeness, and consistency of generated text. By further incorporating uncertainty estimation and factual-consistency constraints to mitigate hallucinations, it ultimately establishes a deployable capability foundation for multimodal medical agents.",
+        r2_title: "Interactive Med-VQA and Clinical Conversational Agents",
+        r2_desc: "An interactive medical visual question answering (Med-VQA) and clinical dialogue agent is designed for real-world clinical workflows by integrating “image understanding–history taking–reasoning–recommendation” into a multi-turn, collaborative system. With medical images as the primary input, it jointly leverages patient history, laboratory and examination results, and structured medical knowledge to perform intent recognition and identify information gaps, proactively asking follow-up questions to acquire critical context. For reasoning, it grounds text to lesion regions as evidence, incorporates retrieval-augmented knowledge and uncertainty modeling, and produces conclusions with traceable explanations, while safety constraints and evidence-consistency checks are applied to reduce hallucinations and clinical risk. For interaction, it supports iterative clarification, differential diagnosis, and follow-up planning, outputting “answer + supporting evidence + confidence + next-step suggestions,” ultimately enabling a deployable, interpretable, and auditable platform for image-assisted decision support and clinician–patient communication.",
+        r3_title: "Radiology Knowledge Graphs and Knowledge Augmentation",
+        r3_desc: "Radiology knowledge graphs and knowledge enhancement center on building a structured semantic network that links imaging findings, anatomy, diseases, examinations/labs, grading/staging, treatment, and follow-up. They unify clinical guidelines and expert consensus, radiology reports, standardized terminologies (e.g., RadLex/SNOMED CT), and real-world data into a computable knowledge representation. In practice, through entity recognition and relation extraction, cross-modal alignment, and evidence tracing, the knowledge graph enables retrieval-augmented generation (RAG) for report generation, Med-VQA, and clinical dialogue, and supports differential-diagnosis reasoning and consistency checking to deliver interpretable and auditable decision support. Methodologically, by combining ontology constraints, graph neural networks, and causal/rule-based reasoning—together with incremental updating and quality control (confidence estimation, conflict resolution, and temporal evolution modeling)—it improves robustness under long-tail diseases, low-resource settings, and distribution shift, while effectively reducing hallucinations in large models, ultimately establishing a knowledge-driven foundation for deployable imaging AI systems.",
 
         pubs_title: "Selected Publications",
         pub_search_placeholder: "Search publications...",
@@ -372,22 +406,30 @@
         kv_dept: "部门",
         kv_dept_value: "信息工程与自动化学院",
         kv_loc: "地点",
-        kv_loc_value: "中国",
+        kv_loc_value: "中国 · 昆明",
         kv_email: "邮箱",
 
         keywords_title: "研究关键词",
-        kw1: "医学影像多模态理解与生成",
-        kw2: "医学视觉问答与临床对话智能体",
-        kw3: "放射知识图谱与知识增强",
-
+        kw1: "深度学习",
+        kw2: "因果机器学习",
+        kw3: "视觉语言模型与智能体",
+        kw4: "医学人工作智能",
+        kw5: "医学图像分析",
+        kw6: "计算机辅助诊断",
+        kw7: "医学图像分割",
+        kw8: "医学报告生成",
+        kw9: "医学视觉问答",
+        kw10: "医学知识图谱",
+        kw11: "跨模特特征融合",
+        
         about_title: "学术简介",
         research_title: "研究方向",
-        r1_title: "医学影像多模态理解与生成",
-        r1_desc: "统一视觉-语言表征与任务协同，覆盖分类/检测/分割与报告生成；强调跨模态对齐、结构化知识注入与事实一致性控制。",
-        r2_title: "交互式 Med-VQA 与临床对话智能体",
-        r2_desc: "面向真实工作流的多轮 VQA/对话与工具增强，实现可控生成与流程化决策支持。",
-        r3_title: "放射学知识图谱与知识增强",
-        r3_desc: "构建影像-报告-病理-指南知识图谱，驱动检索/推理增强的诊断与质控，形成“数据→知识→决策”闭环。",
+        r1_title: "医学影像多模态理解与报告生成",
+        r1_desc: "以“影像—文本—结构化知识/临床数据”的统一建模为核心，面向诊断支持与临床工作流优化，重点解决跨模态语义对齐与可解释性问题：一方面通过视觉表征学习、细粒度病灶定位与区域—句子关联，实现对影像内容的精准理解（如多疾病检测、关键征象识别、医学视觉问答与临床对话）；另一方面以报告生成、病灶描述与结论归纳为代表，融合病史与检查信息、知识图谱与指南先验，在弱/半监督与对比学习等范式下提升生成文本的真实性、完整性与一致性，并通过不确定性估计与事实一致性约束降低幻觉，最终构建可落地的“多模态医学智能体”能力底座。",
+        r2_title: "交互式医学视觉问答与临床对话智能体",
+        r2_desc: "面向真实临床场景，把“看图—问诊—推理—建议”整合为可多轮协作的智能系统：以医学影像为核心输入，联合病史、检验检查与结构化知识，先进行意图识别与信息缺口评估，主动发起追问以获取关键上下文；在推理层面通过病灶区域—文本证据对齐、知识增强检索与不确定性建模，生成可溯源的结论与解释，并以安全约束与证据一致性校验降低幻觉与风险；在交互层面支持多轮澄清、差异诊断与随访计划生成，输出“答案+依据+置信度+下一步建议”，最终形成可落地的影像辅助决策与沟通平台，为医生提供高效率、可解释、可审计的临床智能协作能力",
+        r3_title: "放射知识图谱与知识增强",
+        r3_desc: "以“影像征象—解剖部位—疾病—检查/检验—分级分期—治疗与随访”的结构化语义网络为核心，把指南与专家共识、报告文本、术语体系（如 RadLex/SNOMED CT）以及真实世界数据统一到可计算的知识表示中；在应用层面，通过实体识别与关系抽取、跨模态对齐与证据溯源，将图谱用于报告生成、视觉问答与临床对话中的检索增强（RAG）、差异诊断推理与一致性校验，实现“可解释、可追责”的决策支持；在方法层面，结合本体约束、图神经网络与因果/规则推理，配合增量更新与质量控制（置信度、冲突消解、时序演化），提升模型在长尾病种、少样本场景与分布漂移下的鲁棒性，并有效降低大模型幻觉，最终构建面向临床落地的知识驱动影像智能底座。",
 
         pubs_title: "代表作",
         pub_search_placeholder: "搜索论文...",
@@ -558,10 +600,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
