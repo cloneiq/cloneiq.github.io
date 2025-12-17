@@ -177,7 +177,7 @@
         <div class="sticky-sidebar">
           <div class="card">
             <div style="display:flex; align-items:center; gap: 16px;">
-              <img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="cloneiq.png" alt="CloneIQ">
+              <a href="https://xzy.kust.edu.cn/info/1129/1358.htm" target="_blank"><img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="cloneiq.png" alt="CloneIQ"></a>
               <!-- <img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="https://picsum.photos/200" alt="Profile picture of CloneIQ"> -->
               <div>
                 <h2 style="margin:0; font-size:20px;">Lijun Liu (刘利军)</h2>
@@ -325,6 +325,7 @@
       {'year': 2024, 'title': 'Chest radiology report generation based on cross-modal multi-scale feature fusion (SCI)', 'authors': 'Y. Pan; L. Liu; X. Yang; W. Peng; Q. Huang', 'venue': 'Journal of Radiation Research and Applied Sciences', 'extra': 'Vol. 17, No. 1, Article 100823', 'doi': '10.1016/j.jrras.2024.100823', 'url': 'https://doi.org/10.1016/j.jrras.2024.100823'},
       {'year': 2024, 'title': 'Anterior-posterior memory matrix model for chest radiology image report generation (EI)', 'authors': 'L. Liu; Y. Zhang; Q. Huang', 'venue': 'Journal of Jilin University (Engineering and Technology Edition)', 'extra': 'Vol. 54, No. 8, Pages 2355–2363 (2024-08-01); Language: Chinese', 'doi': '10.13229/j.cnki.jdxbgxb.20230341', 'url': 'https://doi.org/10.13229/j.cnki.jdxbgxb.20230341'},
     ];
+
     const $ = (sel) => document.querySelector(sel);
     const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
 
@@ -417,7 +418,7 @@
         kw8: "医学报告生成",
         kw9: "医学视觉问答",
         kw10: "医学知识图谱",
-        kw11: "跨模特特征融合",
+        kw11: "跨模特征融合",
         
         about_title: "学术简介",
         research_title: "研究方向",
@@ -425,7 +426,7 @@
         r1_desc: "以“影像—文本—结构化知识/临床数据”的统一建模为核心，面向诊断支持与临床工作流优化，重点解决跨模态语义对齐与可解释性问题：一方面通过视觉表征学习、细粒度病灶定位与区域—句子关联，实现对影像内容的精准理解（如多疾病检测、关键征象识别、医学视觉问答与临床对话）；另一方面以报告生成、病灶描述与结论归纳为代表，融合病史与检查信息、知识图谱与指南先验，在弱/半监督与对比学习等范式下提升生成文本的真实性、完整性与一致性，并通过不确定性估计与事实一致性约束降低幻觉，最终构建可落地的“多模态医学智能体”能力底座。",
         r2_title: "交互式医学视觉问答与临床对话智能体",
         r2_desc: "面向真实临床场景，把“看图—问诊—推理—建议”整合为可多轮协作的智能系统：以医学影像为核心输入，联合病史、检验检查与结构化知识，先进行意图识别与信息缺口评估，主动发起追问以获取关键上下文；在推理层面通过病灶区域—文本证据对齐、知识增强检索与不确定性建模，生成可溯源的结论与解释，并以安全约束与证据一致性校验降低幻觉与风险；在交互层面支持多轮澄清、差异诊断与随访计划生成，输出“答案+依据+置信度+下一步建议”，最终形成可落地的影像辅助决策与沟通平台，为医生提供高效率、可解释、可审计的临床智能协作能力",
-        r3_title: "放射知识图谱与知识增强",
+        r3_title: "放射知识图谱与知识检索增强",
         r3_desc: "以“影像征象—解剖部位—疾病—检查/检验—分级分期—治疗与随访”的结构化语义网络为核心，把指南与专家共识、报告文本、术语体系（如 RadLex/SNOMED CT）以及真实世界数据统一到可计算的知识表示中；在应用层面，通过实体识别与关系抽取、跨模态对齐与证据溯源，将图谱用于报告生成、视觉问答与临床对话中的检索增强（RAG）、差异诊断推理与一致性校验，实现“可解释、可追责”的决策支持；在方法层面，结合本体约束、图神经网络与因果/规则推理，配合增量更新与质量控制（置信度、冲突消解、时序演化），提升模型在长尾病种、少样本场景与分布漂移下的鲁棒性，并有效降低大模型幻觉，最终构建面向临床落地的知识驱动影像智能底座。",
 
         pubs_title: "代表作",
@@ -597,4 +598,3 @@
   </script>
 </body>
 </html>
-
