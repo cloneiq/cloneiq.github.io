@@ -1,604 +1,1052 @@
-<!doctype html>
-<html lang="en" data-theme="auto">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lijun Liu (刘利军) · Academic Homepage</title>
-  <meta name="description" content="CloneIQ academic homepage: research, publications, projects, and contact." />
-  <meta name="color-scheme" content="light dark" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Lijun Liu (刘利军) - 学术主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <style>
-    :root {
-      --bg: #ffffff; --fg: #111827; --muted: #6b7280;
-      --card: #f9fafb; --border: #e5e7eb; --link: #2563eb;
-      --pill: #eef2ff; --shadow: 0 1px 3px 0 rgba(0,0,0,.07), 0 1px 2px -1px rgba(0,0,0,.07);
-      --radius: 16px; --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
-    html[data-theme="dark"] {
-      --bg: #030712; --fg: #f9fafb; --muted: #9ca3af;
-      --card: #111827; --border: #374151; --link: #60a5fa;
-      --pill: #1e293b; --shadow: 0 1px 3px 0 rgba(0,0,0,.15), 0 1px 2px -1px rgba(0,0,0,.15);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; font-family: var(--sans);
-      background: var(--bg); color: var(--fg);
-      line-height: 1.65; -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 18px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.0;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: blur(8px) saturate(180%); -webkit-backdrop-filter: blur(8px) saturate(180%);
-      border-bottom: 1px solid var(--border);
-    }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 0; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .avatar {
-      width: 42px; height: 42px; border-radius: 999px;
-      display: grid; place-items: center;
-      background: var(--fg); color: var(--bg);
-      font-weight: 600; font-size: 16px;
-    }
-    .brand h1 { margin: 0; font-size: 18px; font-weight: 600; }
-    .brand .sub { margin: 1px 0 0; font-size: 12px; color: var(--muted); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
 
-    nav { display: flex; gap: 4px; }
-    nav a {
-      color: var(--muted); font-size: 14px; padding: 6px 10px; border-radius: 6px;
-      font-weight: 500; transition: color .2s, background-color .2s;
-    }
-    nav a:hover {
-      color: var(--fg); background: color-mix(in srgb, var(--card) 70%, transparent);
-      text-decoration: none;
-    }
-    @media (max-width: 768px) { nav { display: none; } }
+        /* Language Toggle (moved near Biography top, under name/position area in Hero) */
+        .lang-toggle-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            color: #ecf0f1;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+        .lang-toggle-inline:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.16); }
+        .lang-toggle-inline i { color: #3498db; }
 
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 8px 12px; border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--card); color: var(--fg);
-      font-size: 14px; font-weight: 500;
-      gap: 6px; cursor: pointer; user-select: none;
-      transition: border-color .2s, background-color .2s;
-    }
-    .btn:hover { border-color: color-mix(in srgb, var(--border) 60%, var(--link)); text-decoration: none; }
-    .btn.ghost { background: transparent; border-color: transparent; }
+        /* Hero Section - Combined Header and Personal Info */
+        .hero-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
 
-    main { padding: 32px 0 40px; }
-    .grid { display: grid; gap: 24px; grid-template-columns: 320px 1fr; align-items: start; }
-    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
 
-    .sticky-sidebar { position: sticky; top: 88px; space-y: 24px; }
-    .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px;
-      box-shadow: var(--shadow);
-    }
-    .card h2 { margin: 0 0 16px; font-size: 18px; font-weight: 600; }
-    .card h3 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
-    .section { scroll-margin-top: 88px; }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
 
-    .kv { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 14px; }
-    .kv li { display: flex; justify-content: space-between; gap: 10px; }
-    .kv span:first-child { color: var(--muted); }
-    .kv span:last-child { text-align: right; }
+        .profile-section { text-align: center; animation: fadeInLeft 1s ease-out; }
 
-    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .pill {
-      display: inline-flex; align-items: center;
-      padding: 4px 12px; border-radius: 999px;
-      background: var(--pill); border: 1px solid color-mix(in srgb, var(--pill) 80%, var(--border));
-      font-size: 12px; font-weight: 500;
-    }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid rgba(255,255,255,0.2);
+        }
 
-    .search {
-      width: min(320px, 100%); display: flex; align-items: center;
-      border: 1px solid var(--border); background: var(--bg);
-      border-radius: 10px; padding: 6px 10px;
-    }
-    .search input {
-      width: 100%; border: none; outline: none; background: transparent;
-      color: var(--fg); font-size: 13px;
-    }
+        .contact-info { margin-left: 30px; text-align: left; }
 
-    .pubs { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
-    .pub {
-      padding: 16px; border-radius: 10px;
-      background: var(--card); border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .pub:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -2px rgba(0,0,0,.08); }
-    .pub .year { font-size: 14px; font-weight: 600; color: var(--link); margin-bottom: 4px; }
-    .pub .title { font-weight: 600; }
-    .pub .meta { font-size: 14px; color: var(--muted); margin-top: 6px; }
-    .pub .links { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .contact-info div {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            animation: fadeInRight 1s ease-out;
+            opacity: 0;
+            transform: translateX(20px);
+        }
 
-    footer {
-      margin-top: 32px; padding: 24px 0 40px;
-      color: var(--muted); font-size: 13px; text-align: center;
-      border-top: 1px solid var(--border);
-    }
-    .toast {
-      position: fixed; left: 50%; bottom: 24px;
-      transform: translateX(-50%); padding: 10px 14px; border-radius: 10px;
-      background: var(--fg); color: var(--bg);
-      opacity: 0; pointer-events: none; transition: all .2s ease;
-      max-width: min(560px, 92vw);
-    }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+        .contact-info div:nth-child(1) { animation-delay: 0.2s; }
+        .contact-info div:nth-child(2) { animation-delay: 0.4s; }
+        .contact-info div:nth-child(3) { animation-delay: 0.6s; }
 
-    /* 语言显示控制：保持结构不变，仅切换可见文本 */
-    html[lang="zh-CN"] .lang-en { display: none !important; }
-    html[lang="en"] .lang-zh { display: none !important; }
-  </style>
+        .contact-info div.animated { opacity: 1; transform: translateX(0); }
+
+        .contact-info i { width: 25px; margin-right: 15px; color: #3498db; font-size: 1.2em; }
+        .contact-info span { color: #ecf0f1; font-size: 1.1em; }
+
+        .personal-info { animation: fadeInRight 1s ease-out 0.8s both; }
+
+        .personal-info h1 { font-size: 2.8em; margin-bottom: 10px; font-weight: 300; }
+
+        .personal-info p.position {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .institution {
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .keywords { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+
+        .keyword {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+
+        .keyword:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+
+        /* Biography Section */
+        .biography {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .biography h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+            font-size: 1.8em;
+        }
+
+        .biography h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        .biography p { color: #555; line-height: 1.8; margin-bottom: 15px; }
+
+        /* External Links */
+        .external-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .link-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-card:hover::before { left: 100%; }
+        .link-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+
+        .link-card.github { background: linear-gradient(45deg, #24292e, #4a5058); }
+        .link-card.scholar { background: linear-gradient(45deg, #4285f4, #7baaf7); }
+        .link-card.orcid { background: linear-gradient(45deg, #a6ce39, #c4e0a3); }
+        .link-card.website { background: linear-gradient(45deg, #2c3e50, #34495e); }
+
+        .link-card i { font-size: 2em; }
+        .link-card span { font-size: 1.2em; font-weight: 600; }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .stat-card:hover::before { left: 100%; }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .stat-number { font-size: 2.5em; font-weight: bold; color: #3498db; margin-bottom: 10px; }
+        .stat-label { color: #666; font-size: 1.1em; }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 10px;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .nav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav a:hover::before { left: 100%; }
+        .nav a:hover { background: #3498db; color: white; transform: translateY(-2px); }
+
+        /* Sections */
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+            font-size: 2em;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        .section:hover h2::after { width: 100px; }
+
+        /* Research Interests */
+        .research-interests { display: grid; gap: 25px; }
+
+        .interest-item {
+            padding: 30px;
+            border-left: 5px solid #3498db;
+            background: linear-gradient(to right, #f8f9ff, #ffffff);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .interest-item:hover::before { transform: translateX(100%); }
+        .interest-item:hover { transform: translateX(10px); box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2); }
+
+        .interest-item h3 { color: #3498db; margin-bottom: 15px; position: relative; font-size: 1.3em; }
+        .interest-item h3 i { margin-right: 10px; color: #3498db; }
+        .interest-item p { color: #555; line-height: 1.7; }
+
+        /* Publications */
+        .search-bar { margin-bottom: 20px; position: relative; }
+
+        .search-bar input {
+            width: 100%;
+            padding: 15px 45px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus { outline: none; border-color: #3498db; box-shadow: 0 0 15px rgba(52, 152, 219, 0.2); }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 1.2em;
+        }
+
+        .publication {
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .publication:hover::before { left: 100%; }
+        .publication.appear { opacity: 1; transform: translateX(0); }
+        .publication:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+        .pub-year { font-weight: bold; color: #3498db; margin-bottom: 6px; font-size: 1.2em; }
+        .pub-title { font-weight: 600; margin-bottom: 8px; color: #333; transition: color 0.3s ease; font-size: 1.1em; }
+        .pub-title:hover { color: #3498db; }
+        .pub-authors { color: #666; margin-bottom: 8px; font-style: italic; font-size: 0.95em; }
+        .pub-journal { color: #888; margin-bottom: 8px; font-size: 0.9em; }
+        .pub-doi { color: #3498db; text-decoration: none; transition: all 0.3s ease; font-size: 0.9em; }
+        .pub-doi:hover { text-decoration: underline; color: #2980b9; }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-item {
+            padding: 25px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #ffffff, #f8f9ff);
+            cursor: pointer;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-item:hover::before { left: 100%; }
+        .project-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .project-title { color: #3498db; margin-bottom: 15px; font-weight: 600; font-size: 1.2em; }
+        .project-title i { margin-right: 10px; color: #3498db; }
+        .project-item p { color: #666; line-height: 1.6; }
+
+        .project-link {
+            display: block;
+            margin-top: 15px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover { color: #2980b9; text-decoration: underline; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            margin-top: 20px;
+            border-radius: 15px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; gap: 30px; }
+            .contact-info { margin-left: 0; text-align: center; }
+            .personal-info h1 { font-size: 2.2em; }
+            .nav { flex-direction: column; }
+            .nav a { text-align: center; margin: 5px 0; }
+            .external-links { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .stats-section { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-section { grid-template-columns: 1fr; }
+            .hero-section { padding: 40px 0; }
+            .personal-info h1 { font-size: 1.8em; }
+            .profile-img { width: 150px; height: 150px; font-size: 3em; }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <div class="wrap topbar">
-      <a href="#" class="brand" style="text-decoration:none; color: var(--fg);">
-        <div class="avatar" aria-hidden="true">CL</div>
-        <div>
-          <h1>CloneIQ@KUST</h1>
-          <div class="sub" data-i18n="brand_sub">Kunming University of Science and Technology · Faculty of Information Engineering and Automation</div>
-        </div>
-      </a>
+    <div class="container">
+        <!-- Hero Section - Combined Header and Personal Info -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="profile-section">
+                    <div class="profile-img">
+                      <a href="https://xzy.kust.edu.cn/info/1129/1358.htm" target="_blank"><img style="width: 100%; height: 100%; border-radius: 999px; object-fit: cover;" src="cloneiq.png" alt="CloneIQ"></a>
+                    </div>
+                    <div class="contact-info">
+                        <div><i class="fas fa-envelope"></i> <span>cloneiq@kust.edu.cn</span></div>
+                        <div><i class="fas fa-envelope"></i> <span>cloneiq@126.com</span></div>
+                        <div><i class="fas fa-map-marker-alt"></i> <span data-i18n="location">Kunming, Yunnan, China</span></div>
+                    </div>
+                </div>
 
-      <div style="display:flex; gap:10px; align-items:center">
-        <nav aria-label="Site">
-          <a href="#about" data-i18n="nav_about">About</a>
-          <a href="#research" data-i18n="nav_research">Research</a>
-          <a href="#publications" data-i18n="nav_publications">Publications</a>
-          <a href="#projects" data-i18n="nav_projects">Projects</a>
+                <div class="personal-info">
+                    <h1>Lijun Liu (刘利军)</h1>
+                    <p class="position" data-i18n="position">Associate Professor (Ph.D.) / M.S. Supervisor</p>
+
+                    
+
+                    <div class="institution">
+                        <i class="fas fa-university"></i> <span data-i18n="university">Kunming University of Science and Technology</span><br>
+                        <p style="padding-top:10px ;" data-i18n="schools">Faculty of Information Engineering and Automation, School of Artificial Intelligence Industry</p>
+                    </div>
+                    <div class="keywords">
+                        <span class="keyword" data-i18n="kw1">Deep Learning</span>
+                        <span class="keyword" data-i18n="kw2">Causal Machine Learning</span>
+                        <span class="keyword" data-i18n="kw3">Vision-Language Models and Agents</span>
+                        <span class="keyword" data-i18n="kw4">AI in Medicine</span>
+                        <span class="keyword" data-i18n="kw5">Medical Imaging</span>
+                        <span class="keyword" data-i18n="kw6">Medical Image Analysis</span>
+                        <span class="keyword" data-i18n="kw7">Med-VQA</span>
+                        <span class="keyword" data-i18n="kw8">Medical Report Generation</span>
+                        <span class="keyword" data-i18n="kw9">Medical Knowledge Graph</span>
+                    </div>
+                    <!-- Manual language toggle moved here (easy access) -->
+                    <div id="langToggle" class="lang-toggle-inline" title="Switch language / 切换语言">
+                        <i class="fas fa-language"></i>
+                        <span id="langToggleText">中文</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography Section -->
+        <section class="biography">
+            <h2><i class="fas fa-file-alt"></i> <span data-i18n="bioTitle">Biography</span></h2>
+            <p data-i18n="bioP1">
+                Lijun Liu received his Ph.D. degree in Engineering and is currently an Associate Professor and M.S. supervisor at the Faculty of Information Engineering and Automation / AI Industry College, Kunming University of Science and Technology. His research and teaching focus on the interdisciplinary area of artificial intelligence and medical imaging, with interests in machine learning and deep learning, medical foundation models, intelligent medical imaging technologies, AI-driven medical image diagnosis and report generation, medical visual question answering and clinical dialogue, and radiology knowledge graphs.
+            </p>
+            <p data-i18n="bioP2">
+                He has led or participated in more than ten research projects funded by the National Natural Science Foundation of China, the Ministry of Science and Technology, and provincial agencies, and spearheaded the development of an Intelligent Medical Imaging Integrated Service Platform. He serves as a reviewer for leading international journals, including EAAI, ESWA, CMPB, NN, BSPC, IF, and IVC. He has published more than 20 papers as first or corresponding author in internationally recognized journals such as IEEE TMI and MedIAs, as well as major conferences including BIBM and ICIC, with over ten papers indexed by SCI/EI, and holds more than ten granted invention patents.
+            </p>
+        </section>
+
+        <!-- External Links -->
+        <div class="external-links">
+            <a href="https://xzy.kust.edu.cn/info/1129/1358.htm" class="link-card website" target="_blank">
+                <i class="fas fa-globe"></i>
+                <span data-i18n="linkWebsite">Official Website</span>
+            </a>
+            <a href="https://github.com/cloneiq" class="link-card github" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=bi_u1-sAAAAJ&hl=zh-CN" class="link-card scholar" target="_blank">
+                <i class="fas fa-graduation-cap"></i>
+                <span data-i18n="linkScholar">Scholar</span>
+            </a>
+            <a href="https://orcid.org/0000-0003-4543-0111" class="link-card orcid" target="_blank">
+                <i class="fab fa-orcid"></i>
+                <span>ORCID</span>
+            </a>
+            
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label" data-i18n="statPub">Publications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label" data-i18n="statProj">Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label" data-i18n="statPatent">Patents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">SCI</div>
+                <div class="stat-label" data-i18n="statJournal">Journals</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="#research"><i class="fas fa-search"></i> <span data-i18n="navResearch">Research</span></a>
+            <a href="#publications"><i class="fas fa-book"></i> <span data-i18n="navPubs">Publications</span></a>
+            <a href="#projects"><i class="fas fa-project-diagram"></i> <span data-i18n="navProjects">Projects</span></a>
         </nav>
 
-        <!-- 语言切换按钮 -->
-        <button id="langBtn" class="btn ghost" type="button" aria-label="Switch language">中</button>
-
-        <button id="themeBtn" class="btn ghost" type="button" aria-label="Toggle theme">
-          <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main" class="wrap" style="margin-top: 10px;">
-    <div class="grid">
-      <!-- Sidebar -->
-      <aside>
-        <div class="sticky-sidebar">
-          <div class="card">
-            <div style="display:flex; align-items:center; gap: 16px;">
-              <a href="https://xzy.kust.edu.cn/info/1129/1358.htm" target="_blank"><img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="cloneiq.png" alt="CloneIQ"></a>
-              <!-- <img style="width: 80px; height: 80px; border-radius: 999px; object-fit: cover;" src="https://picsum.photos/200" alt="Profile picture of CloneIQ"> -->
-              <div>
-                <h2 style="margin:0; font-size:20px;">Lijun Liu (刘利军)</h2>
-                <p style="margin:4px 0 0; font-size:14px; color: var(--muted);" data-i18n="sidebar_role">Associate Professor / M.S. Supervisor</p>
-              </div>
+        <!-- Research Section -->
+        <section id="research" class="section">
+            <h2><i class="fas fa-search"></i> <span data-i18n="researchTitle">Research Interests</span></h2>
+            <div class="research-interests">
+                <div class="interest-item">
+                    <h3><i class="fas fa-image"></i> <span data-i18n="ri1Title">Multimodal Understanding and Report Generation</span></h3>
+                    <p data-i18n="ri1Body">
+                        Centering on unified representation and reasoning over images–text–structured knowledge/clinical data, this line of research targets diagnostic support and workflow optimization by tackling cross-modal semantic alignment and explainable evidence-chain construction. It achieves precise understanding via fine-grained lesion localization and region-to-text grounding, and improves factuality, consistency, and completeness in knowledge-augmented report generation and conclusion summarization. With uncertainty estimation and consistency constraints to mitigate hallucinations, it establishes a deployable capability foundation for multimodal clinical agents.
+                    </p>
+                </div>
+                
+                <div class="interest-item">
+                    <h3><i class="fas fa-comments"></i> <span data-i18n="ri2Title">Interactive Med-VQA and Clinical Conversational Agents</span></h3>
+                    <p data-i18n="ri2Body">
+                        For real-world clinical practice, this work integrates image understanding–interactive history taking–clinical reasoning–decision recommendation into a multi-turn collaborative agent. With medical imaging as the primary thread, it fuses patient history, laboratory/examination results, and structured knowledge, and proactively asks targeted follow-up questions via intent recognition and information-gap assessment. It generates traceable conclusions through lesion region–text evidence grounding, retrieval augmentation, and uncertainty modeling, while safety constraints and evidence-consistency checks are used to mitigate hallucinations and clinical risk. Supporting iterative clarification, differential diagnosis, and follow-up planning, it outputs "answer / evidence / confidence / next steps," enabling a deployable, interpretable, and auditable platform for image-assisted decision support and clinical communication.
+                    </p>
+                </div>
+                
+                <div class="interest-item">
+                    <h3><i class="fas fa-project-diagram"></i> <span data-i18n="ri3Title">Radiology Knowledge Graphs and Knowledge Augmentation</span></h3>
+                    <p data-i18n="ri3Body">
+                        Built upon a radiology knowledge graph spanning findings–anatomy–diseases–tests–staging–management/follow-up, it unifies guidelines, terminologies, and real-world data into a computable representation. Via information extraction, cross-modal evidence grounding, and RAG, it supports report generation, Med-VQA/dialogue, and differential-diagnosis reasoning with consistency checks, enabling interpretable and auditable decision support. By integrating ontology constraints, graph learning, causal/rule-based inference, and incremental quality control, it improves robustness to long-tail and distribution shift while suppressing hallucinations, forming a deployable, knowledge-driven foundation for imaging intelligence.
+                    </p>
+                </div>
             </div>
-
-            <div style="margin-top:20px; padding-top:20px; border-top: 1px solid var(--border);">
-              <ul class="kv">
-                <!-- 关键修复：值也加 data-i18n，语言切换会同步 -->
-                <li>
-                  <span data-i18n="kv_org">Affiliation</span>
-                  <span data-i18n="kv_org_value">Kunming University of Science and Technology</span>
-                </li>
-                <li>
-                  <span data-i18n="kv_dept">Department</span>
-                  <span data-i18n="kv_dept_value">Faculty of Information Engineering and Automation</span>
-                </li>
-                <li>
-                  <span data-i18n="kv_loc">Location</span>
-                  <span data-i18n="kv_loc_value">Kunming, China</span>
-                </li>
-                <li>
-                  <span data-i18n="kv_email">Email</span>
-                  <span><a href="mailto:cloneiq@kust.edu.cn">cloneiq@kust.edu.cn</a></span>
-                </li>
-                <li>
-                  <span></span>
-                  <span><a href="mailto:cloneiq@126.com">cloneiq@126.com</a></span>
-    
-                </li>
-              </ul>
-            </div>
-
-            <div style="margin-top:20px; padding-top:20px; border-top: 1px solid var(--border);">
-              <div style="display:flex; gap:12px;">
-                <a class="btn" href="https://github.com/cloneiq" target="_blank" rel="noopener">GitHub</a>
-                <a class="btn" href="https://scholar.google.com/citations?user=bi_u1-sAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Scholar</a>
-                <a class="btn" href="https://orcid.org/0000-0003-4543-0111" target="_blank" rel="noopener">ORCID</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="margin-top: 10px;">
-            <h3 data-i18n="keywords_title">Keywords</h3>
-            <div class="pills">
-              <span class="pill" data-i18n="kw1">Deep Learning</span>
-              <span class="pill" data-i18n="kw2">Causal Machine Learning</span>
-              <span class="pill" data-i18n="kw3">Vision-Language Models and Agents</span>
-              <span class="pill" data-i18n="kw4">Artificial Intelligence in Medicine</span>
-              <span class="pill" data-i18n="kw5">Medical Image Analysis</span>
-              <span class="pill" data-i18n="kw6">Computer Aided Diagnosis</span>
-              <span class="pill" data-i18n="kw7">Medical Image Segmentation</span>
-              <span class="pill" data-i18n="kw8">Medical Report Generation</span>
-              <span class="pill" data-i18n="kw9">Medical Visual Question Answering</span>
-              <span class="pill" data-i18n="kw10">Medical Knowledge Graph</span>
-              <span class="pill" data-i18n="kw11">Cross-modal Feature Fusion</span>
-
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <div style="display: grid; gap: 24px;">
-        <section id="about" class="card section">
-          <h2 data-i18n="about_title">Biography</h2>
-          <div style="display:grid; gap:12px; color: var(--muted); font-size: 15px;">
-            <p class="lang-zh" style="margin:0"> 刘利军，工学博士，昆明理工大学信息工程与自动化学院/人工智能产业学院副教授、硕士生导师。长期从事人工智能与医学影像交叉领域的科研与教学，研究方向聚焦机器学习与深度学习、医学大模型、智能医学成像技术、医学影像智能诊断与报告生成、医学视觉问答与临床对话及放射学知识图谱等。主持或参与国家自然科学基金、科技部及省部级科研项目10余项，牵头建设“智能医学影像综合服务实验平台”。担任EAAI、ESWA、CMPB、NN、BSPC、IF、IVC等国际期刊审稿人。以第一或通讯作者在 IEEE TMI、MedIA等国际知名期刊及 BIBM、ICIC 等重要会议发表论文20余篇（SCI/EI收录10余篇），授权发明专利10余项。</p>
-            <p class="lang-en" style="margin:0; font-style: italic; font-size: 14px;">           
-              Lijun Liu received his Ph.D. degree in Engineering and is currently an Associate Professor and M.S. supervisor at the Faculty of Information Engineering and Automation / AI Industry College, Kunming University of Science and Technology. 
-              His research and teaching focus on the interdisciplinary area of artificial intelligence and medical imaging, with interests in machine learning and deep learning, medical foundation models, intelligent medical imaging technologies, AI-driven medical image diagnosis and report generation, medical visual question answering and clinical dialogue, and radiology knowledge graphs. He has led or participated in more than ten research projects funded by the National Natural Science Foundation of China, the Ministry of Science and Technology, and provincial agencies, and spearheaded the development of an Intelligent Medical Imaging Integrated Service Platform. He serves as a reviewer for leading international journals, including EAAI, ESWA, CMPB, NN, BSPC, IF, and IVC. He has published more than 20 papers as first or corresponding author in internationally recognized journals such as IEEE TMI and MedIAs, as well as major conferences including BIBM and ICIC, with over ten papers indexed by SCI/EI, and holds more than ten granted invention patents.
-            </p>
-          </div>
         </section>
 
-        <section id="research" class="card section">
-          <h2 data-i18n="research_title">Research Interests</h2>
-          <div style="display:grid; gap:12px;">
-            <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r1_title">Multimodal Understanding and Generation</h3>
-              <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r1_desc">Unified vision-language representation and multi-task learning across classification/detection/segmentation and report generation, emphasizing alignment, structured knowledge injection, and factual consistency control.</p>
-            </div>
-            <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r2_title">Interactive Med-VQA and Clinical Conversational Agents</h3>
-              <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r2_desc">Multi-turn VQA/dialogue aligned with real workflows, with tool augmentation for controllable generation and procedural decision support.</p>
-            </div>
-            <div style="background: var(--bg); padding:16px; border-radius:12px; border:1px solid var(--border);">
-              <h3 style="margin:0; font-size: 15px;" data-i18n="r3_title">Radiology Knowledge Graphs and Knowledge Augmentation</h3>
-              <p style="margin:6px 0 0; font-size:14px; color: var(--muted);" data-i18n="r3_desc">Building image–report–pathology–guideline knowledge graphs to enable retrieval/reasoning-enhanced diagnosis and QC, closing the loop from data to knowledge to decision.</p>
-            </div>
-          </div>
-        </section>
-
+        <!-- Publications Section (content stays EN; title supports zh/en) -->
         <section id="publications" class="section">
-          <div style="display:flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px;">
-            <h2 style="margin:0;" data-i18n="pubs_title">Selected Publications</h2>
-            <div class="search" role="search">
-              <span style="color: var(--muted);" aria-hidden="true">🔎</span>
-              <input id="q" type="search" placeholder="Search publications..." autocomplete="off" data-i18n-placeholder="pub_search_placeholder" />
+            <h2><i class="fas fa-book"></i> <span data-i18n="pubsTitle">Selected Publications</span></h2>
+            <div class="search-bar">
+                <input type="text" placeholder="🔍 Search publications...">
+                <i class="fas fa-search search-icon"></i>
             </div>
-          </div>
-          <ul id="pubList" class="pubs"></ul>
+            
+            <div class="publications-list">
+                <div class="publication">
+                    <div class="pub-year">2026</div>
+                    <div class="pub-title">CIMB-MVQA: Causal intervention on modality-specific biases for medical visual question answering</div>
+                    <div class="pub-authors">Bing Liu; <span class="font-bold">Lijun Liu(*)</span>; Jiaman Ding; Xiaobing Yang; Wei Peng; Li Liu</div>
+                    <div class="pub-journal">Medical Image Analysis · Volume 107, Part B, Article 103850</div>
+                    <div class="pub-journal">(SCI, JCR Q1, CCF B, IF: 11.6)</div>
+                    <a href="https://doi.org/10.1016/j.media.2025.103850" class="pub-doi" target="_blank">DOI: 10.1016/j.media.2025.103850</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2026</div>
+                    <div class="pub-title">Beyond static knowledge: Dynamic context-aware cross-modal contrastive learning for medical visual question answering</div>
+                    <div class="pub-authors">Rui Yang; <span class="font-bold">Lijun Liu(*)</span>; Xupeng Feng; Wei Peng; Xiaobing Yang</div>
+                    <div class="pub-journal">IEEE Transactions on Medical Imaging · Early Access, Pages 1–1</div>
+                    <div class="pub-journal">(SCI, JCR Q1, CCP B, IF: 9.8)</div>
+                    <a href="https://doi.org/10.1109/TMI.2025.3617289" class="pub-doi" target="_blank">DOI: 10.1109/TMI.2025.3617289</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2026</div>
+                    <div class="pub-title">Redefining medical visual question answering using conditional generative diffusion models</div>
+                    <div class="pub-authors">Bing Liu; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Li Liu</div>
+                    <div class="pub-journal">Biomedical Signal Processing and Control · Volume 111, Article 108222</div>
+                    <div class="pub-journal">(SCI, JCR Q2, IF: 4.9)</div>
+                    <a href="https://doi.org/10.1016/j.bspc.2025.108222" class="pub-doi" target="_blank">DOI: 10.1016/j.bspc.2025.108222</a>
+                </div>
+                <div class="publication">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-title">Polyp-MoE: Modeling Temporal Consistency and Structural Priors via Mixture-of-Experts for Video Polyp Segmentation</div>
+                    <div class="pub-authors">Juntong Ti; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Li Liu;</div>
+                    <div class="pub-journal">2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</div>
+                    <div class="pub-journal">(EI, CCF-B)</div>
+                    <a href="https://doi.org/10.1109/BIBM66473.2025.11357169" class="pub-doi" target="_blank">DOI: 10.1109/BIBM66473.2025.11357169</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-title">From detection to radiology report generation: Fine-grained multi-modal alignment with semi-supervised learning</div>
+                    <div class="pub-authors">Qian Tang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng</div>
+                    <div class="pub-journal">Journal of Imaging Informatics in Medicine · Published online: 2025-09-16; ISSN 2948-2933</div>
+                    <div class="pub-journal">(SCI, JCR Q1, IF: 3.8)</div>
+                    <a href="https://doi.org/10.1007/s10278-025-01650-z" class="pub-doi" target="_blank">DOI: 10.1007/s10278-025-01650-z</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-title">Denoising multi-level cross-attention and contrastive learning for chest radiology report generation</div>
+                    <div class="pub-authors">Deng Zhu; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng</div>
+                    <div class="pub-journal">Journal of Imaging Informatics in Medicine · Vol. 38, No. 5, Pages 2646–2663 (2025-10-01)</div>
+                    <div class="pub-journal">(SCI, JCR Q1, IF: 3.8)</div>
+                    <a href="https://doi.org/10.1007/s10278-025-01422-9" class="pub-doi" target="_blank">DOI: 10.1007/s10278-025-01422-9</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-title">Body part-aware cross-modal feature interaction learning for medical vision question answering</div>
+                    <div class="pub-authors">Shuting Dai; Hao Cong; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; L. Liu</div>
+                    <div class="pub-journal">Advanced Intelligent Computing Technology and Applications: 21st International Conference, ICIC 2025</div>
+                    <div class="pub-journal">(EI, CCF-C)</div>
+                    <a href="https://doi.org/10.1007/978-981-96-9794-6_2" class="pub-doi" target="_blank">DOI: 10.1007/978-981-96-9794-6_2</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-title">NSEC-YOLO: Real-time lesion detection on chest X-ray with adaptive noise suppression and global perception aggregation</div>
+                    <div class="pub-authors">Xinyu. Zhang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng</div>
+                    <div class="pub-journal">Journal of Radiation Research and Applied Sciences · Vol. 18, No. 1, Article 101281</div>
+                    <div class="pub-journal">(SCI, JCR Q2)</div>
+                    <a href="https://doi.org/10.1016/j.jrras.2024.101281" class="pub-doi" target="_blank">DOI: 10.1016/j.jrras.2024.101281</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-title">Cross-guided attention and combined loss for optimizing gastrointestinal visual question answering</div>
+                    <div class="pub-authors">Qian Yang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing. Yang; Li Liu; Wei Peng</div>
+                    <div class="pub-journal">2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</div>
+                    <div class="pub-journal">(EI, CCF-B)</div>
+                    <a href="https://doi.org/10.1109/BIBM62325.2024.10821854" class="pub-doi" target="_blank">DOI: 10.1109/BIBM62325.2024.10821854</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-title">Multi-scale lesion feature fusion and location-aware for chest multi-disease detection</div>
+                    <div class="pub-authors">Yubo Yuan; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Qingsong. Huang</div>
+                    <div class="pub-journal">Journal of Imaging Informatics in Medicine · Vol. 37, No. 6, Pages 2752–2767 (2024-12-01)</div>
+                    <div class="pub-journal">(SCI, JCR Q1, IF: 3.8)</div>
+                    <a href="https://doi.org/10.1007/s10278-024-01133-7" class="pub-doi" target="_blank">DOI: 10.1007/s10278-024-01133-7</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-title">Chest radiology report generation based on cross-modal multi-scale feature fusion</div>
+                    <div class="pub-authors">Yu Pan; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Qingsong Huang</div>
+                    <div class="pub-journal">Journal of Radiation Research and Applied Sciences · Vol. 17, No. 1, Article 100823</div>
+                    <div class="pub-journal">(SCI, JCR Q2)</div>
+                    <a href="https://doi.org/10.1016/j.jrras.2024.100823" class="pub-doi" target="_blank">DOI: 10.1016/j.jrras.2024.100823</a>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-title">Anterior-posterior memory matrix model for chest radiology image report generation</div>
+                    <div class="pub-authors"><span class="font-bold">Lijun Liu(*)</span>; Yunfeng. Zhang; Qingsong Huang</div>
+                    <div class="pub-journal">Journal of Jilin University (Engineering and Technology Edition) · Vol. 54, No. 8, Pages 2355–2363 (2024-08-01)</div>
+                    <div class="pub-journal">(EI)</div>
+                    <a href="https://doi.org/10.13229/j.cnki.jdxbgxb.20230341" class="pub-doi" target="_blank">DOI: 10.13229/j.cnki.jdxbgxb.20230341</a>
+                </div>
+            </div>
+
+
+
         </section>
 
-        <section id="projects" class="card section">
-          <h2 data-i18n="projects_title">Projects & Resources</h2>
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px">
-            <div>
-              <h3 data-i18n="projects_os">Open Source</h3>
-              <ul style="margin:10px 0 0; padding-left:18px; font-size:14px; color: var(--muted);">
-                <li><a href="https://github.com/cloneiq/CIMB-MVQA" target="_blank" rel="noopener">CIMB-MVQA</a>：<span data-i18n="os1">Causal intervention for modality-specific biases</span></li>
-                <li><a href="https://github.com/cloneiq/DiffuVQA" target="_blank" rel="noopener">DiffuVQA</a>：<span data-i18n="os2">Conditional diffusion for generative Med-VQA</span></li>
-                <li><a href="https://github.com/cloneiq/CKRA-MedVQA" target="_blank" rel="noopener">CKRA-MedVQA</a>：<span data-i18n="os3">Dynamic knowledge & cross-modal contrastive learning</span></li>
-              </ul>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2><i class="fas fa-project-diagram"></i> <span data-i18n="projTitle">Projects & Resources</span></h2>
+            
+            <h3 data-i18n="projOpen">Open Source Projects</h3>
+            <div class="projects-grid" style="margin-top: 15px;">
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-code-branch"></i> CIMB-MVQA</div>
+                    <p data-i18n="p1Desc">Causal intervention for modality-specific biases in medical visual question answering systems</p>
+                    <a href="https://github.com/cloneiq/CIMB-MVQA" class="project-link" target="_blank"><span data-i18n="visit">Visit Project →</span></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-wave-square"></i> DE-CaGI</div>
+                    <p data-i18n="p2Desc">Conditional diffusion models for generative medical visual question answering</p>
+                    <a href="https://github.com/cloneiq/DE-CaGI" class="project-link" target="_blank"><span data-i18n="visit">Visit Project →</span></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title"><i class="fas fa-brain"></i> CKRA-MedVQA</div>
+                    <p data-i18n="p3Desc">Dynamic knowledge and cross-modal contrastive learning for medical visual question answering</p>
+                    <a href="https://github.com/cloneiq/CKRA-MedVQA" class="project-link" target="_blank"><span data-i18n="visit">Visit Project →</span></a>
+                </div>
             </div>
-            <div>
-              <h3 data-i18n="projects_collab">Collaboration</h3>
-              <p style="margin:10px 0 0; font-size:14px; color: var(--muted);" data-i18n="projects_collab_desc">
-                I welcome collaborations in medical imaging AI, multimodal generation, knowledge augmentation, and clinical agents. Please include your CV, research interests, and one problem you most want to solve.
-              </p>
-            </div>
-          </div>
         </section>
-      </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p data-i18n="footer">© 2026 CloneIQ. All rights reserved.</p>
+        </div>
     </div>
-  </main>
 
-  <footer>
-    © <span id="y"></span> CloneIQ. <span data-i18n="footer_rights">All rights reserved.</span>
-  </footer>
+    <script>
+        // -------------------------
+        // i18n (Publications title bilingual; content stays EN)
+        // -------------------------
+        const I18N = {
+            en: {
+                pageTitle: "Lijun Liu (刘利军) - Academic Homepage",
+                location: "Kunming, Yunnan, China",
+                position: "Associate Professor (Ph.D.) / M.S. Supervisor",
+                university: "Kunming University of Science and Technology",
+                schools: "Faculty of Information Engineering and Automation, School of Artificial Intelligence Industry",
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+                kw1: "Deep Learning",
+                kw2: "Causal Machine Learning",
+                kw3: "Vision-Language Models and Agents",
+                kw4: "AI in Medicine",
+                kw5: "Medical Imaging",
+                kw6: "Medical Image Analysis",
+                kw7: "Med-VQA",
+                kw8: "Medical Report Generation",
+                kw9: "Medical Knowledge Graph",
 
-  <script>
-    const PAPERS = [
-      {'year': 2026, 'title': 'CIMB-MVQA: Causal intervention on modality-specific biases for medical visual question answering (SCI, JCR Q1, CCF B, IF: 11.6)', 'authors': 'Bing Liu; Lijun Liu; Jiaman Ding; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Medical Image Analysis', 'extra': 'Volume 107, Part B, Article 103850', 'doi': '10.1016/j.media.2025.103850', 'url': 'https://www.sciencedirect.com/science/article/pii/S1361841525003962', 'code': 'https://github.com/cloneiq/CIMB-MVQA'},
-      {'year': 2026, 'title': 'Beyond static knowledge: Dynamic context-aware cross-modal contrastive learning for medical visual question answering (SCI, JCR Q1, CCP B, IF: 9.8)', 'authors': 'R. Yang; L. Liu; X. Feng; W. Peng; X. Yang', 'venue': 'IEEE Transactions on Medical Imaging', 'extra': 'Early Access, Pages 1–1', 'doi': '10.1109/TMI.2025.3617289', 'url': 'https://doi.org/10.1109/TMI.2025.3617289', 'code': 'https://github.com/cloneiq/CKRA-MedVQA'},
-      {'year': 2026, 'title': 'Redefining medical visual question answering using conditional generative diffusion models (SCI, JCR Q2, IF: 4.9)', 'authors': 'Bing Liu; Lijun Liu; Xiaobing Yang; Wei Peng; Li Liu', 'venue': 'Biomedical Signal Processing and Control', 'extra': 'Volume 111, Article 108222', 'doi': '10.1016/j.bspc.2025.108222', 'url': 'https://www.sciencedirect.com/science/article/pii/S1746809425007335', 'code': 'https://github.com/cloneiq/DiffuVQA'},
-      {'year': 2025, 'title': 'From detection to radiology report generation: Fine-grained multi-modal alignment with semi-supervised learning (SCI, JCR Q1, IF: 3.8)', 'authors': 'Q. Tang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Imaging Informatics in Medicine (From Journal of Digital Imaging)', 'extra': 'Published online: 2025-09-16; ISSN 2948-2933', 'doi': '10.1007/s10278-025-01650-z', 'url': 'https://doi.org/10.1007/s10278-025-01650-z'},
-      {'year': 2025, 'title': 'Denoising multi-level cross-attention and contrastive learning for chest radiology report generation (SCI, JCR Q1, IF: 3.8)', 'authors': 'D. Zhu; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Imaging Informatics in Medicine (From Journal of Digital Imaging)', 'extra': 'Vol. 38, No. 5, Pages 2646–2663 (2025-10-01)', 'doi': '10.1007/s10278-025-01422-9', 'url': 'https://doi.org/10.1007/s10278-025-01422-9'},
-      {'year': 2025, 'title': 'Body part-aware cross-modal feature interaction learning for medical vision question answering (CCF C)', 'authors': 'S. Dai; H. Cong; L. Liu; X. Yang; W. Peng; L. Liu', 'venue': 'Advanced Intelligent Computing Technology and Applications: 21st International Conference, ICIC 2025 (Lecture Notes in Computer Science, vol. 15846)', 'extra': 'Pages 14–23', 'doi': '10.1007/978-981-96-9794-6_2', 'url': 'https://doi.org/10.1007/978-981-96-9794-6_2'},
-      {'year': 2025, 'title': 'NSEC-YOLO: Real-time lesion detection on chest X-ray with adaptive noise suppression and global perception aggregation (SCI, JCR Q2)', 'authors': 'X. Zhang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': 'Journal of Radiation Research and Applied Sciences', 'extra': 'Vol. 18, No. 1, Article 101281', 'doi': '10.1016/j.jrras.2024.101281', 'url': 'https://doi.org/10.1016/j.jrras.2024.101281'},
-      {'year': 2024, 'title': 'Cross-guided attention and combined loss for optimizing gastrointestinal visual question answering (CCF B)', 'authors': 'Q. Yang; L. Liu; X. Yang; L. Liu; W. Peng', 'venue': '2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)', 'extra': 'Pages 1296–1301', 'doi': '10.1109/BIBM62325.2024.10821854', 'url': 'https://doi.org/10.1109/BIBM62325.2024.10821854'},
-      {'year': 2024, 'title': 'Multi-scale lesion feature fusion and location-aware for chest multi-disease detection (SCI, JCR Q1, IF: 3.8)', 'authors': 'Y. Yuan; L. Liu; X. Yang; L. Liu; Q. Huang', 'venue': 'Journal of Imaging Informatics in Medicine (From Journal of Digital Imaging)', 'extra': 'Vol. 37, No. 6, Pages 2752–2767 (2024-12-01)', 'doi': '10.1007/s10278-024-01133-7', 'url': 'https://doi.org/10.1007/s10278-024-01133-7'},
-      {'year': 2024, 'title': 'Chest radiology report generation based on cross-modal multi-scale feature fusion (SCI, JCR Q2)', 'authors': 'Y. Pan; L. Liu; X. Yang; W. Peng; Q. Huang', 'venue': 'Journal of Radiation Research and Applied Sciences', 'extra': 'Vol. 17, No. 1, Article 100823', 'doi': '10.1016/j.jrras.2024.100823', 'url': 'https://doi.org/10.1016/j.jrras.2024.100823'},
-      {'year': 2024, 'title': 'Anterior-posterior memory matrix model for chest radiology image report generation (EI)', 'authors': 'L. Liu; Y. Zhang; Q. Huang', 'venue': 'Journal of Jilin University (Engineering and Technology Edition)', 'extra': 'Vol. 54, No. 8, Pages 2355–2363 (2024-08-01); Language: Chinese', 'doi': '10.13229/j.cnki.jdxbgxb.20230341', 'url': 'https://doi.org/10.13229/j.cnki.jdxbgxb.20230341'},
-    ];
+                bioTitle: "Biography",
+                bioP1: "Lijun Liu received his Ph.D. degree in Engineering and is currently an Associate Professor and M.S. supervisor at the Faculty of Information Engineering and Automation / AI Industry College, Kunming University of Science and Technology. His research and teaching focus on the interdisciplinary area of artificial intelligence and medical imaging, with interests in machine learning and deep learning, medical foundation models, intelligent medical imaging technologies, AI-driven medical image diagnosis and report generation, medical visual question answering and clinical dialogue, and radiology knowledge graphs.",
+                bioP2: "He has led or participated in more than ten research projects funded by the National Natural Science Foundation of China, the Ministry of Science and Technology, and provincial agencies, and spearheaded the development of an Intelligent Medical Imaging Integrated Service Platform. He serves as a reviewer for leading international journals, including EAAI, ESWA, CMPB, NN, BSPC, IF, and IVC. He has published more than 20 papers as first or corresponding author in internationally recognized journals such as IEEE TMI and MedIAs, as well as major conferences including BIBM and ICIC, with over ten papers indexed by SCI/EI, and holds more than ten granted invention patents.",
 
-    const $ = (sel) => document.querySelector(sel);
-    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+                linkScholar: "Scholar",
+                linkWebsite: "Official Website",
 
-    /* =========================
-       i18n（默认英文）
-       ========================= */
-    const LANG_KEY = "academic_lang";
-    const I18N = {
-      "en": {
-        brand_sub: "Kunming University of Science and Technology · Faculty of Information Engineering and Automation",
-        nav_about: "About",
-        nav_research: "Research",
-        nav_publications: "Publications",
-        nav_projects: "Projects",
+                statPub: "Publications",
+                statProj: "Projects",
+                statPatent: "Patents",
+                statJournal: "Journals",
 
-        sidebar_role: "Associate Professor / M.S. Supervisor",
-        kv_org: "Affiliation",
-        kv_org_value: "Kunming University of Science and Technology",
-        kv_dept: "Department",
-        kv_dept_value: "Faculty of Information Engineering and Automation",
-        kv_loc: "Location",
-        kv_loc_value: "Kunming, China",
-        kv_email: "Email",
+                navResearch: "Research",
+                navPubs: "Publications",
+                navProjects: "Projects",
 
-        keywords_title: "Keywords",
-        kw1: "Deep Learning",
-        kw2: "Causal Machine Learning",
-        kw3: "Vision-Language Models and Agents",
-        kw4: "Artificial Intelligence in Medicine",
-        kw5: "Medical Image Analysis",
-        kw6: "Computer Aided Diagnosis",
-        kw7: "Medical Image Segmentation",
-        kw8: "Medical Report Generation",
-        kw9: "Medical Visual Question Answering",
-        kw10: "Medical Knowledge Graph",
-        kw11: "Cross-modal Feature Fusion",
+                researchTitle: "Research Interests",
+                ri1Title: "Multimodal Understanding and Radiology Report Generation",
+                ri1Body: "Centering on unified representation and reasoning over images–text–structured knowledge/clinical data, this line of research targets diagnostic support and workflow optimization by tackling cross-modal semantic alignment and explainable evidence-chain construction. It achieves precise understanding via fine-grained lesion localization and region-to-text grounding, and improves factuality, consistency, and completeness in knowledge-augmented report generation and conclusion summarization. With uncertainty estimation and consistency constraints to mitigate hallucinations, it establishes a deployable capability foundation for multimodal clinical agents.",
+                ri2Title: "Interactive Med-VQA and Clinical Conversational Agents",
+                ri2Body: "For real-world clinical practice, this work integrates image understanding–interactive history taking–clinical reasoning–decision recommendation into a multi-turn collaborative agent. With medical imaging as the primary thread, it fuses patient history, laboratory/examination results, and structured knowledge, and proactively asks targeted follow-up questions via intent recognition and information-gap assessment. It generates traceable conclusions through lesion region–text evidence grounding, retrieval augmentation, and uncertainty modeling, while safety constraints and evidence-consistency checks are used to mitigate hallucinations and clinical risk. Supporting iterative clarification, differential diagnosis, and follow-up planning, it outputs \"answer / evidence / confidence / next steps,\" enabling a deployable, interpretable, and auditable platform for image-assisted decision support and clinical communication.",
+                ri3Title: "Radiology Knowledge Graphs and Knowledge-augmented Augmentation",
+                ri3Body: "Built upon a radiology knowledge graph spanning findings–anatomy–diseases–tests–staging–management/follow-up, it unifies guidelines, terminologies, and real-world data into a computable representation. Via information extraction, cross-modal evidence grounding, and RAG, it supports report generation, Med-VQA/dialogue, and differential-diagnosis reasoning with consistency checks, enabling interpretable and auditable decision support. By integrating ontology constraints, graph learning, causal/rule-based inference, and incremental quality control, it improves robustness to long-tail and distribution shift while suppressing hallucinations, forming a deployable, knowledge-driven foundation for imaging intelligence.",
 
-        about_title: "Biography",
-        research_title: "Research Interests",
-        r1_title: "Multimodal Understanding and Report Generation",
-        r1_desc: "Centering on unified representation and reasoning over images–text–structured knowledge/clinical data, this line of research targets diagnostic support and workflow optimization by tackling cross-modal semantic alignment and explainable evidence-chain construction. It achieves precise understanding via fine-grained lesion localization and region-to-text grounding, and improves factuality, consistency, and completeness in knowledge-augmented report generation and conclusion summarization. With uncertainty estimation and consistency constraints to mitigate hallucinations, it establishes a deployable capability foundation for multimodal clinical agents.",
-        r2_title: "Interactive Med-VQA and Clinical Conversational Agents",
-        r2_desc: "For real-world clinical practice, this work integrates image understanding–interactive history taking–clinical reasoning–decision recommendation into a multi-turn collaborative agent. With medical imaging as the primary thread, it fuses patient history, laboratory/examination results, and structured knowledge, and proactively asks targeted follow-up questions via intent recognition and information-gap assessment. It generates traceable conclusions through lesion region–text evidence grounding, retrieval augmentation, and uncertainty modeling, while safety constraints and evidence-consistency checks are used to mitigate hallucinations and clinical risk. Supporting iterative clarification, differential diagnosis, and follow-up planning, it outputs “answer / evidence / confidence / next steps,” enabling a deployable, interpretable, and auditable platform for image-assisted decision support and clinical communication.",
-        r3_title: "Radiology Knowledge Graphs and Knowledge Augmentation",
-        r3_desc: "Built upon a radiology knowledge graph spanning findings–anatomy–diseases–tests–staging–management/follow-up, it unifies guidelines, terminologies, and real-world data into a computable representation. Via information extraction, cross-modal evidence grounding, and RAG, it supports report generation, Med-VQA/dialogue, and differential-diagnosis reasoning with consistency checks, enabling interpretable and auditable decision support. By integrating ontology constraints, graph learning, causal/rule-based inference, and incremental quality control, it improves robustness to long-tail and distribution shift while suppressing hallucinations, forming a deployable, knowledge-driven foundation for imaging intelligence.",
+                pubsTitle: "Selected Publications",
 
-        pubs_title: "Selected Publications",
-        pub_search_placeholder: "Search publications...",
-        pubs_no_match: "No matching publications found.",
-        btn_paper: "Paper",
-        btn_code: "Code",
-        btn_copy: "Copy Citation",
-        toast_copied: "Citation copied to clipboard",
-        toast_failed: "Failed to copy",
+                projTitle: "Projects & Resources",
+                projOpen: "Open Source Projects",
+                p1Desc: "Causal intervention for modality-specific biases in medical visual question answering systems",
+                p2Desc: "Causal Gradient Intervention for Debiased and Evidence-Grounded Medical Visual Question Answering",
+                p3Desc: "Dynamic knowledge and cross-modal contrastive learning for medical visual question answering",
+                visit: "Visit Project →",
 
-        projects_title: "Projects & Resources",
-        projects_os: "Open Source",
-        os1: "Causal intervention for modality-specific biases",
-        os2: "Conditional diffusion for generative Med-VQA",
-        os3: "Dynamic knowledge & cross-modal contrastive learning",
-        projects_collab: "Collaboration",
-        projects_collab_desc: "I welcome collaborations in medical imaging AI, multimodal generation, knowledge augmentation, and clinical agents. Please include your CV, research interests, and one problem you most want to solve.",
+                footer: "© 2026 CloneIQ. All rights reserved."
+            },
+            zh: {
+                pageTitle: "刘利军 - 学术主页",
+                location: "中国 · 云南 · 昆明",
+                position: "副教授（工学博士）/ 硕士生导师",
+                university: "昆明理工大学",
+                schools: "信息工程与自动化学院，人工智能产业学院",
 
-        footer_rights: "All rights reserved."
-      },
-      "zh-CN": {
-        brand_sub: "昆明理工大学 · 信息工程与自动化学院",
-        nav_about: "简介",
-        nav_research: "研究",
-        nav_publications: "论文",
-        nav_projects: "项目",
+                kw1: "深度学习",
+                kw2: "因果机器学习",
+                kw3: "视觉-语言大模型与智能体",
+                kw4: "医学人工智能",
+                kw5: "医学影像",
+                kw6: "医学图像分析",
+                kw7: "医学视觉问答",
+                kw8: "放射报告生成",
+                kw9: "医学知识图谱",
 
-        sidebar_role: "副教授 / 硕士生导师",
-        kv_org: "单位",
-        kv_org_value: "昆明理工大学",
-        kv_dept: "部门",
-        kv_dept_value: "信息工程与自动化学院",
-        kv_loc: "地点",
-        kv_loc_value: "中国 · 昆明",
-        kv_email: "邮箱",
+                bioTitle: "个人简介",
+                bioP1: "刘利军，工学博士，现为昆明理工大学信息工程与自动化学院/人工智能产业学院副教授、硕士生导师。研究与教学聚焦人工智能与医学影像交叉方向，主要兴趣包括机器学习与深度学习、医学基础模型、智能医学成像技术、AI驱动的医学影像诊断与报告生成、医学视觉问答与临床对话，以及放射学知识图谱等。",
+                bioP2: "主持或参与国家自然科学基金、科技部及省部级等科研项目十余项，牵头建设“智能医学影像综合服务平台”。担任EAAI、ESWA、CMPB、NN、BSPC、IF、IVC等国际期刊审稿人。以第一/通讯作者在IEEE TMI、MedIAs等国际期刊及BIBM、ICIC等重要会议发表论文20余篇，其中SCI/EI收录十余篇；获授权发明专利十余项。",
 
-        keywords_title: "研究关键词",
-        kw1: "深度学习",
-        kw2: "因果机器学习",
-        kw3: "视觉语言模型与智能体",
-        kw4: "医学人工作智能",
-        kw5: "医学图像分析",
-        kw6: "计算机辅助诊断",
-        kw7: "医学图像分割",
-        kw8: "医学报告生成",
-        kw9: "医学视觉问答",
-        kw10: "医学知识图谱",
-        kw11: "跨模特征融合",
-        
-        about_title: "学术简介",
-        research_title: "研究方向",
-        r1_title: "医学影像多模态理解与报告生成",
-        r1_desc: "以“影像—文本—结构化知识/临床数据”的统一表征与推理为核心，面向诊断支持与工作流优化，聚焦跨模态语义对齐与可解释证据链构建：通过细粒度病灶定位与区域—文本绑定实现精准理解，并以知识增强的报告生成与结论归纳提升文本事实性、一致性与完整性，结合不确定性评估与一致性约束抑制幻觉，形成可落地的多模态临床智能体能力底座。",
-        r2_title: "交互式医学视觉问答与临床对话智能体",
-        r2_desc: "针对真实临床场景，将“影像理解—问诊交互—临床推理—决策建议”整合为多轮协作智能体：以影像为主线融合病史、检验检查与结构化知识，基于意图识别与信息缺口评估主动追问；通过病灶区域—文本证据对齐、检索增强与不确定性建模生成可溯源结论，并以安全约束与一致性校验抑制幻觉与风险；支持多轮澄清、差异诊断与随访规划，输出“答案/依据/置信度/下一步”，构建可落地、可解释、可审计的影像辅助决策与沟通平台。",
-        r3_title: "放射知识图谱与知识检索增强",
-        r3_desc: "以“征象—解剖—疾病—检查—分期—诊疗随访”知识图谱为底座，将指南、术语体系与真实世界数据统一为可计算表示；通过信息抽取、跨模态证据对齐与RAG支撑报告生成/视觉问答/对话及差异诊断一致性校验，实现可解释可审计的决策支持；结合本体约束、图学习与因果/规则推理及增量质控，增强长尾与分布漂移鲁棒性并抑制幻觉，形成可落地的知识驱动影像智能基础设施。",
+                linkScholar: "谷歌学术",
+                linkWebsite: "学校官网",
 
-        pubs_title: "代表作",
-        pub_search_placeholder: "搜索论文...",
-        pubs_no_match: "未找到匹配的论文。",
-        btn_paper: "论文",
-        btn_code: "代码",
-        btn_copy: "复制引用",
-        toast_copied: "已复制引用",
-        toast_failed: "复制失败",
+                statPub: "论文发表",
+                statProj: "科研项目",
+                statPatent: "授权专利",
+                statJournal: "SCI期刊",
 
-        projects_title: "项目与资源",
-        projects_os: "Open Source",
-        os1: "因果干预抑制跨模态偏差",
-        os2: "条件扩散生成式 Med-VQA",
-        os3: "动态知识与跨模态对比学习",
-        projects_collab: "Collaboration",
-        projects_collab_desc: "欢迎在医学影像 AI、多模态生成、知识增强与临床智能体等方向开展合作。来信建议附：简历、研究兴趣以及一个您最想解决的问题。",
+                navResearch: "研究方向",
+                navPubs: "论文发表",
+                navProjects: "项目与资源",
 
-        footer_rights: "版权所有。"
-      }
-    };
+                researchTitle: "研究方向",
+                ri1Title: "多模态理解与放射报告生成",
+                ri1Body: "围绕图像–文本–结构化知识/临床数据的统一表征与推理，聚焦跨模态语义对齐与可解释证据链构建，服务于诊断辅助与工作流优化。通过细粒度病灶定位与区域到文本的证据对齐实现精准理解，并在知识增强的报告生成与结论总结中提升事实性、一致性与完整性。结合不确定性估计与一致性约束抑制幻觉，为可落地的多模态临床智能体奠定能力基础。",
+                ri2Title: "医学视觉问答与临床对话智能体",
+                ri2Body: "面向真实临床场景，将影像理解–交互式问诊–临床推理–决策建议整合为多轮协作智能体。以医学影像为主线，融合病史、检验/检查结果与结构化知识，并通过意图识别与信息缺口评估主动提出针对性追问。借助病灶区域–文本证据对齐、检索增强与不确定性建模输出可追溯结论，同时以安全约束与证据一致性校验降低幻觉与临床风险。支持迭代澄清、鉴别诊断与随访规划，输出“答案/证据/置信度/下一步”，形成可部署、可解释、可审计的影像辅助决策与临床沟通平台。",
+                ri3Title: "放射学知识图谱与知识检索增强",
+                ri3Body: "构建覆盖影像征象–解剖结构–疾病–检查–分期–处置/随访的放射学知识图谱，将指南、术语体系与真实数据统一为可计算表示。结合信息抽取、跨模态证据对齐与RAG，支撑报告生成、医学视觉问答/对话以及鉴别诊断推理，并通过一致性校验提供可解释、可审计的决策支持。融合本体约束、图学习、因果/规则推理与增量质控，提高对长尾与分布偏移的鲁棒性并抑制幻觉，形成可落地的知识驱动成像智能底座。",
 
-    function getLang() {
-      const saved = localStorage.getItem(LANG_KEY);
-      if (saved === "en" || saved === "zh-CN") return saved;
-      return "en"; // 默认英文
-    }
+                pubsTitle: "论文发表（Selected Publications）",
 
-    function t(key) {
-      const lang = document.documentElement.getAttribute("lang") || "en";
-      const pack = I18N[lang] || I18N["en"];
-      return (pack && key in pack) ? pack[key] : "";
-    }
+                projTitle: "项目与资源",
+                projOpen: "开源项目",
+                p1Desc: "面向医学视觉问答中的模态特异性偏置进行因果干预",
+                p2Desc: "用于去偏与证据可追溯的医学视觉问答的因果梯度干预",
+                p3Desc: "面向医学视觉问答的动态知识与跨模态对比学习",
+                visit: "访问项目 →",
 
-    function applyLang(lang) {
-      const normalized = (lang === "zh-CN") ? "zh-CN" : "en";
-      document.documentElement.setAttribute("lang", normalized);
-      localStorage.setItem(LANG_KEY, normalized);
+                footer: "© 2026 CloneIQ. 版权所有。"
+            }
+        };
 
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const k = el.getAttribute("data-i18n");
-        const val = t(k);
-        if (val) el.textContent = val;
-      });
+        function detectDefaultLang() {
+            const saved = localStorage.getItem("lang");
+            if (saved === "zh" || saved === "en") return saved;
+            const nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+            return nav.startsWith("zh") ? "zh" : "en";
+        }
 
-      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-        const k = el.getAttribute("data-i18n-placeholder");
-        const val = t(k);
-        if (val) el.setAttribute("placeholder", val);
-      });
+        function applyI18n(lang) {
+            const dict = I18N[lang] || I18N.en;
 
-      const btn = $("#langBtn");
-      if (btn) btn.textContent = (normalized === "en") ? "中" : "EN";
+            document.documentElement.lang = (lang === "zh") ? "zh-CN" : "en";
 
-      render(filterPapers($("#q")?.value || ""));
-    }
+            const titleEl = document.querySelector('title[data-i18n="pageTitle"]');
+            if (titleEl) titleEl.textContent = dict.pageTitle;
 
-    function cycleLang() {
-      const cur = document.documentElement.getAttribute("lang") || "en";
-      const next = (cur === "en") ? "zh-CN" : "en";
-      applyLang(next);
-    }
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                const val = dict[key];
+                if (typeof val === "string") el.textContent = val;
+            });
 
-    function toast(msg) {
-      const tt = $("#toast");
-      if (!tt) return;
-      tt.textContent = msg;
-      tt.classList.add("show");
-      clearTimeout(tt.__timer);
-      tt.__timer = setTimeout(() => tt.classList.remove("show"), 1800);
-    }
+            const toggleText = document.getElementById("langToggleText");
+            if (toggleText) toggleText.textContent = (lang === "zh") ? "EN" : "中文";
 
-    async function copyToClipboard(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        toast(t("toast_copied"));
-      } catch (e) {
-        toast(t("toast_failed"));
-      }
-    }
+            localStorage.setItem("lang", lang);
+        }
 
-    function citationText(p) {
-      return `${p.authors}. "${p.title}." In ${p.venue}, ${p.year}. DOI: ${p.doi || 'N/A'}`;
-    }
+        let currentLang = detectDefaultLang();
+        applyI18n(currentLang);
 
-    function render(list) {
-      const ul = $("#pubList");
-      ul.innerHTML = "";
-      if (!list.length) {
-        ul.innerHTML = `<li style="color: var(--muted); text-align: center; padding: 24px 0;">${esc(t("pubs_no_match"))}</li>`;
-        return;
-      }
+        document.getElementById("langToggle")?.addEventListener("click", () => {
+            currentLang = (currentLang === "zh") ? "en" : "zh";
+            applyI18n(currentLang);
+        });
 
-      for (const p of list) {
-        const li = document.createElement("li");
-        li.className = "pub";
-        const links = [];
-        if (p.url) links.push(`<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t("btn_paper"))}</a>`);
-        if (p.code) links.push(`<a class="btn" href="${esc(p.code)}" target="_blank" rel="noopener">${esc(t("btn_code"))}</a>`);
-        links.push(`<button class="btn" type="button" data-copy="1">${esc(t("btn_copy"))}</button>`);
-        if (p.doi) links.push(`<span style="font-size:12px; color: var(--muted); align-self: center;">DOI: ${esc(p.doi)}</span>`);
+        // -------------------------------------------------
+        // Existing JS (unchanged behavior / same structure)
+        // -------------------------------------------------
 
-        li.innerHTML = `
-          <div class="year">${esc(p.year)}</div>
-          <div class="title">${esc(p.title)}</div>
-          <div class="meta">${esc(p.authors)}</div>
-          <div class="meta"><em>${esc(p.venue)}</em>${p.extra ? " · " + esc(p.extra) : ""}</div>
-          <div class="links">${links.join("")}</div>
-        `;
-        li.querySelector('[data-copy="1"]').addEventListener("click", () => copyToClipboard(citationText(p)));
-        ul.appendChild(li);
-      }
-    }
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 
-    function norm(s) { return String(s || "").toLowerCase(); }
-    function filterPapers(q) {
-      const s = norm(q).trim();
-      const list = [...PAPERS].sort((a,b) => (b.year||0) - (a.year||0));
-      if (!s) return list;
-      return list.filter(p => {
-        const hay = norm(`${p.title} ${p.authors} ${p.venue} ${p.year} ${p.doi||""}`);
-        return hay.includes(s);
-      });
-    }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('hero-section')) {
+                        const contactItems = entry.target.querySelectorAll('.contact-info div');
+                        contactItems.forEach((item, index) => {
+                            setTimeout(() => { item.classList.add('animated'); }, 200 * index);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
 
-    const THEME_KEY = "academic_theme";
-    const lightIcon = $('#theme-icon-light');
-    const darkIcon = $('#theme-icon-dark');
+        document.querySelectorAll('.section, .biography, .hero-section').forEach(section => {
+            observer.observe(section);
+        });
 
-    function applyTheme(mode) {
-      document.documentElement.setAttribute("data-theme", mode);
-      if (mode === 'dark') {
-        darkIcon.style.display = 'none';
-        lightIcon.style.display = 'block';
-      } else {
-        lightIcon.style.display = 'none';
-        darkIcon.style.display = 'block';
-      }
-    }
+        const pubObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    function cycleTheme() {
-      const isDark = document.documentElement.getAttribute("data-theme") === 'dark';
-      const next = isDark ? "light" : "dark";
-      localStorage.setItem(THEME_KEY, next);
-      applyTheme(next);
-    }
+        document.querySelectorAll('.publication').forEach(pub => {
+            pubObserver.observe(pub);
+        });
 
-    function initTheme() {
-      const saved = localStorage.getItem(THEME_KEY);
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved) applyTheme(saved);
-      else applyTheme(prefersDark ? 'dark' : 'light');
-    }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
 
-    (function init() {
-      $("#y").textContent = String(new Date().getFullYear());
-      initTheme();
-      $("#themeBtn").addEventListener("click", cycleTheme);
+        const searchInput = document.querySelector('.search-bar input');
+        const publications = document.querySelectorAll('.publication');
 
-      // 初始化语言（默认英文）+ 绑定语言切换
-      applyLang(getLang());
-      $("#langBtn").addEventListener("click", cycleLang);
+        searchInput?.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            publications.forEach((pub, index) => {
+                const title = pub.querySelector('.pub-title')?.textContent.toLowerCase() || '';
+                const authors = pub.querySelector('.pub-authors')?.textContent.toLowerCase() || '';
+                const journal = pub.querySelector('.pub-journal')?.textContent.toLowerCase() || '';
+                if (title.includes(searchTerm) || authors.includes(searchTerm) || journal.includes(searchTerm)) {
+                    pub.style.display = 'block';
+                    setTimeout(() => { pub.classList.add('appear'); }, index * 50);
+                } else {
+                    pub.classList.remove('appear');
+                    setTimeout(() => { pub.style.display = 'none'; }, 300);
+                }
+            });
+        });
 
-      render(filterPapers(""));
-      const input = $("#q");
-      if (input) input.addEventListener("input", () => render(filterPapers(input.value)));
-    })();
-  </script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.section, .biography, .hero-section').forEach(section => {
+                    if (section.getBoundingClientRect().top < window.innerHeight * 0.5) {
+                        section.classList.add('visible');
+                    }
+                });
+            }, 500);
+        });
+
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, '')) || 0;
+                if (target > 0) {
+                    let current = 0;
+                    const increment = target / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = counter.textContent.includes('+') ? `${target}+` : target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '');
+                        }
+                    }, 20);
+                }
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statsObserver.observe(statsSection);
+        }
+
+        document.querySelectorAll('.link-card, .nav a, .stat-card, .project-item, .publication').forEach(el => {
+            el.addEventListener('mouseenter', function() { this.style.transition = 'all 0.3s ease'; });
+        });
+    </script>
 </body>
 </html>
-
-
-
