@@ -1114,6 +1114,26 @@
       border-color: rgba(14, 165, 233, .18);
       color: #0f6592;
     }
+    
+    .pub-code-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(27, 31, 35, 0.15);
+      background: #f6f8fa;
+      color: #24292e;
+      font-size: .84rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .pub-code-link:hover {
+      background: #24292e;
+      color: white;
+      border-color: #24292e;
+    }
 
     .projects-grid {
       display: grid;
@@ -2270,36 +2290,38 @@
       <div class="pub-list" id="pubList">
 
         <article class="pub-card reveal">
-    <div class="pub-year">2026</div>
-    <div class="pub-content">
-        <h3 class="pub-title">
-            <a href="https://doi.org/10.1016/j.media.2026.104226" target="_blank" rel="noopener">
-                Causal gradient intervention for debiased and evidence-grounded medical visual question answering
-            </a>
-        </h3>
-        <div class="pub-authors">
-            Bing Liu; Ziyuan Yang; <span class="font-bold">Lijun Liu(*)</span>; Jiaman Ding; Wei Peng.
-        </div>
-        <div class="pub-tags">
-            <span class="pub-topic">医学视觉问答/因果梯度干预</span>
-            <span class="pub-venue">Medical Image Analysis, 114 (2026)</span>
-            <span class="pub-venue highlight">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                JCR Q1, 中科院1区Top, CCF-C, CCAI-B, IF: 14.0
-            </span>
-        </div>
-    </div>
-</article>
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+              <h3 class="pub-title">
+                  <a href="https://doi.org/10.1016/j.media.2026.104226" target="_blank" rel="noopener">
+                      Causal gradient intervention for debiased and evidence-grounded medical visual question answering
+                  </a>
+              </h3>
+              <div class="pub-authors">
+                  Bing Liu; Ziyuan Yang; <span class="font-bold">Lijun Liu(*)</span>; Jiaman Ding; Wei Peng.
+              </div>
+              <div class="pub-tags">
+                  <span class="pub-topic">医学视觉问答/因果梯度干预</span>
+                  <span class="pub-venue">Medical Image Analysis, 114 (2026)</span>
+                  <span class="pub-venue highlight">
+                      JCR Q1, 中科院1区Top, CCF-C, CCAI-B, IF: 14.0
+                  </span>
+                  <a href="https://github.com/cloneiq/DE-CaGI" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+              </div>
+          </div>
+        </article>
+        
         <article class="pub-card reveal">
             <div class="pub-year">2026</div>
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1016/j.engappai.2026.115620" target="_blank" rel="noopener">Cross-modal orthogonal adaptive contrastive learning for robust chest radiology report generation</a></h3>
                 <div class="pub-authors">Qian Tang; <span class="font-bold">Lijun Liu(*)</span>; Deng Zhu; Jiaman Ding; Wei Peng; Li Liu.</div>
-                <div class="pub-tags"><span class="pub-topic">医学报告生成/对比学习</span><span class="pub-venue">Engineering Applications of Artificial Intelligence, 181 (2026), Part 5</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院1区Top, CCF-C, IF: 9.0</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学报告生成/对比学习</span>
+                    <span class="pub-venue">Engineering Applications of Artificial Intelligence, 181 (2026), Part 5</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院1区Top, CCF-C, IF: 9.0</span>
+                    <a href="https://github.com/cloneiq/COACL" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
         </article>
 
@@ -2308,7 +2330,12 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1016/j.media.2025.103850" target="_blank" rel="noopener">CIMB-MVQA: Causal intervention on modality-specific biases for medical visual question answering</a></h3>
                 <div class="pub-authors">Bing Liu; <span class="font-bold">Lijun Liu(*)</span>; Jiaman Ding; Xiaobing Yang; Wei Peng; Li Liu.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/因果干预</span><span class="pub-venue">Medical Image Analysis, 107 (2026), Part B</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院1区Top, CCF-C, CCAI-B, IF: 14.0</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/因果干预</span>
+                    <span class="pub-venue">Medical Image Analysis, 107 (2026), Part B</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院1区Top, CCF-C, CCAI-B, IF: 14.0</span>
+                    <a href="https://github.com/cloneiq/CIMB-MVQA" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
         </article>
 
@@ -2317,8 +2344,12 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1109/TMI.2025.3617289" target="_blank" rel="noopener">Beyond static knowledge: Dynamic context-aware cross-modal contrastive learning for medical visual question answering</a></h3>
                 <div class="pub-authors">Rui Yang; <span class="font-bold">Lijun Liu(*)</span>; Xupeng Feng; Wei Peng; Xiaobing Yang.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/动态知识增强</span><span class="pub-venue">IEEE Transactions on Medical Imaging, 2026, 45(3)</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                JCR Q1, 中科院1区Top, CCF-B, CCAI-A, IF: 12.4</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/动态知识增强</span>
+                    <span class="pub-venue">IEEE Transactions on Medical Imaging, 2026, 45(3)</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院1区Top, CCF-B, CCAI-A, IF: 12.4</span>
+                    <a href="https://github.com/cloneiq/CKRA-MedVQA" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
         </article>
 
@@ -2327,7 +2358,12 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1016/j.bspc.2025.108222" target="_blank" rel="noopener">Redefining medical visual question answering using conditional generative diffusion models</a></h3>
                 <div class="pub-authors">Bing Liu; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Li Liu.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/扩散生成</span><span class="pub-venue">Biomedical Signal Processing and Control, 111(2026)</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q2, 中科院2区, CCAI-C, IF: 5.7</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/扩散生成</span>
+                    <span class="pub-venue">Biomedical Signal Processing and Control, 111(2026)</span>
+                    <span class="pub-venue highlight">JCR Q2, 中科院2区, CCAI-C, IF: 5.7</span>
+                    <a href="https://github.com/cloneiq/DiffuVQA" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
         </article>
 
@@ -2336,7 +2372,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1007/s10278-026-01909-z" target="_blank" rel="noopener">MLB-Net: A multi-level lesion-aware and boundary-enhanced network for polyp segmentation</a></h3>
                 <div class="pub-authors">Juntong Ti; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yan; Li Liu; Wei Peng.</div>
-                <div class="pub-tags"><span class="pub-topic">影像分割/边界增强</span><span class="pub-venue">Journal of Imaging Informatics in Medicine</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院3区, IF: 3.1</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">影像分割/边界增强</span>
+                    <span class="pub-venue">Journal of Imaging Informatics in Medicine</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院3区, IF: 3.1</span>
+                </div>
             </div>
         </article>
         
@@ -2345,7 +2385,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="http://journal2.cqupt.edu.cn/jcuptnsecn/jcuptnse/article/abstract/cqyddxxbzrkxb-38-1-118" target="_blank" rel="noopener">医学视觉问答中图像与答案一致性验证方法研究</a></h3>
                 <div class="pub-authors">从浩; <span class="font-bold">刘利军(*)</span>; 杨小兵 .</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/一致性校验</span><span class="pub-venue">重庆邮电大学学报 (自然科学版), 2026, 38 (1)</span><span class="pub-venue highlight"><i class="fas fa-star"></i>中文核心期刊</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/一致性校验</span>
+                    <span class="pub-venue">重庆邮电大学学报 (自然科学版), 2026, 38 (1)</span>
+                    <span class="pub-venue highlight">中文核心期刊</span>
+                </div>
             </div>
         </article>
 
@@ -2354,7 +2398,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1109/BIBM66473.2025.11357169" target="_blank" rel="noopener">Polyp-MoE: Modeling temporal consistency and structural priors via mixture-of-experts for video polyp segmentation</a></h3>
                 <div class="pub-authors">Juntong Ti; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Li Liu.</div>
-                <div class="pub-tags"><span class="pub-topic">影像分割/混合专家</span><span class="pub-venue">IEEE BIBM 2025</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> EI, CCF-B, CCAI-B</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">影像分割/混合专家</span>
+                    <span class="pub-venue">IEEE BIBM 2025</span>
+                    <span class="pub-venue highlight">EI, CCF-B, CCAI-B</span>
+                </div>
             </div>
         </article>
 
@@ -2363,7 +2411,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="http://jcip.cipsc.org.cn/CN/Y2025/V39/I10/143" target="_blank" rel="noopener">基于语义信息一致性校验的医学视觉问答方法</a></h3>
                 <div class="pub-authors">孔凡彦; <span class="font-bold">刘利军(*)</span>; 张云峰; 黄青松; 刘骊; 付晓东.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/一致性校验</span><span class="pub-venue">中文信息学报, 2025, 39 (10)</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> 中文核心期刊, CCF-T1</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/一致性校验</span>
+                    <span class="pub-venue">中文信息学报, 2025, 39 (10)</span>
+                    <span class="pub-venue highlight">中文核心期刊, CCF-T1</span>
+                </div>
             </div>
         </article>
 
@@ -2372,7 +2424,12 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1007/s10278-025-01650-z" target="_blank" rel="noopener">From detection to radiology report generation: Fine-grained multi-modal alignment with semi-supervised learning</a></h3>
                 <div class="pub-authors">Qian Tang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng.</div>
-                <div class="pub-tags"><span class="pub-topic">医学报告生成/细粒度对齐</span><span class="pub-venue">Journal of Imaging Informatics in Medicine</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院3区, IF: 3.1</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学报告生成/细粒度对齐</span>
+                    <span class="pub-venue">Journal of Imaging Informatics in Medicine</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院3区, IF: 3.1</span>
+                    <a href="https://github.com/cloneiq/D2R-Net" target="_blank" rel="noopener" class="pub-code-link"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
         </article>
 
@@ -2381,7 +2438,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1007/s10278-025-01422-9" target="_blank" rel="noopener">Denoising multi-level cross-attention and contrastive learning for chest radiology report generation</a></h3>
                 <div class="pub-authors">Deng Zhu; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng.</div>
-                <div class="pub-tags"><span class="pub-topic">医学报告生成/对比学习</span><span class="pub-venue">Journal of Imaging Informatics in Medicine</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院3区, IF: 3.1</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学报告生成/对比学习</span>
+                    <span class="pub-venue">Journal of Imaging Informatics in Medicine</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院3区, IF: 3.1</span>
+                </div>
             </div>
         </article>
 
@@ -2390,7 +2451,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1007/978-981-96-9794-6_2" target="_blank" rel="noopener">Body part-aware cross-modal feature interaction learning for medical vision question answering</a></h3>
                 <div class="pub-authors">Shuting Dai; Hao Cong; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; L. Liu.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/部位感知</span><span class="pub-venue">ICIC 2025</span><span class="pub-venue highlight"><i class="fas fa-star"></i> EI, CCF-C</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/部位感知</span>
+                    <span class="pub-venue">ICIC 2025</span>
+                    <span class="pub-venue highlight">EI, CCF-C</span>
+                </div>
             </div>
         </article>
 
@@ -2399,7 +2464,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1016/j.jrras.2024.101281" target="_blank" rel="noopener">NSEC-YOLO: Real-time lesion detection on chest X-ray with adaptive noise suppression and global perception aggregation</a></h3>
                 <div class="pub-authors">Xinyu. Zhang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Wei Peng.</div>
-                <div class="pub-tags"><span class="pub-topic">病灶检测/实时检测</span><span class="pub-venue">Journal of Radiation Research and Applied Sciences</span><span class="pub-venue highlight"><i class="fas fa-star"></i> JCR Q1, 中科院4区, IF: 3.5</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">病灶检测/实时检测</span>
+                    <span class="pub-venue">Journal of Radiation Research and Applied Sciences</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院4区, IF: 3.5</span>
+                </div>
             </div>
         </article>
 
@@ -2408,7 +2477,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="http://xwxt.sict.ac.cn/CN/Y2025/V46/I4/922" target="_blank" rel="noopener">医学视觉问答中的问题类型与答案一致性校验</a></h3>
                 <div class="pub-authors">戴舒婷; <span class="font-bold">刘利军(*)</span>; 杨小兵; 黄青松; 袁钰博.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/一致性校验</span><span class="pub-venue">小型微型计算机系统 · V46, I4</span><span class="pub-venue highlight"><i class="fas fa-star"></i> 中文核心期刊, CCF-T2</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/一致性校验</span>
+                    <span class="pub-venue">小型微型计算机系统 · V46, I4</span>
+                    <span class="pub-venue highlight">中文核心期刊, CCF-T2</span>
+                </div>
             </div>
         </article>
 
@@ -2417,7 +2490,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1109/BIBM62325.2024.10821854" target="_blank" rel="noopener">Cross-guided attention and combined loss for optimizing gastrointestinal visual question answering</a></h3>
                 <div class="pub-authors">Qian Yang; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing. Yang; Li Liu; Wei Peng.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/引导注意</span><span class="pub-venue">IEEE BIBM 2024</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> EI, CCF-B, CCAI-B</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/引导注意</span>
+                    <span class="pub-venue">IEEE BIBM 2024</span>
+                    <span class="pub-venue highlight">EI, CCF-B, CCAI-B</span>
+                </div>
             </div>
         </article>
 
@@ -2426,7 +2503,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1007/s10278-024-01133-7" target="_blank" rel="noopener">Multi-scale lesion feature fusion and location-aware for chest multi-disease detection</a></h3>
                 <div class="pub-authors">Yubo Yuan; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Li Liu; Qingsong Huang.</div>
-                <div class="pub-tags"><span class="pub-topic">影像诊断/位置感知</span><span class="pub-venue">Journal of Imaging Informatics in Medicine</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> JCR Q1, 中科院3区, IF: 3.1</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">影像诊断/位置感知</span>
+                    <span class="pub-venue">Journal of Imaging Informatics in Medicine</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院3区, IF: 3.1</span>
+                </div>
             </div>
         </article>
 
@@ -2435,7 +2516,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.1016/j.jrras.2024.100823" target="_blank" rel="noopener">Chest radiology report generation based on cross-modal multi-scale feature fusion</a></h3>
                 <div class="pub-authors">Yu Pan; <span class="font-bold">Lijun Liu(*)</span>; Xiaobing Yang; Wei Peng; Qingsong Huang.</div>
-                <div class="pub-tags"><span class="pub-topic">医学报告生成/多尺度融合</span><span class="pub-venue">Journal of Radiation Research and Applied Sciences</span><span class="pub-venue highlight"><i class="fas fa-star"></i> JCR Q1, 中科院4区, IF: 3.5</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学报告生成/多尺度融合</span>
+                    <span class="pub-venue">Journal of Radiation Research and Applied Sciences</span>
+                    <span class="pub-venue highlight">JCR Q1, 中科院4区, IF: 3.5</span>
+                </div>
             </div>
         </article>
 
@@ -2444,7 +2529,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="https://doi.org/10.13229/j.cnki.jdxbgxb.20230341" target="_blank" rel="noopener">前后文记忆矩阵引导的胸部放射影像报告生成模型</a></h3>
                 <div class="pub-authors"><span class="font-bold">刘利军(*)</span>; 张云峰; 黄青松.</div>
-                <div class="pub-tags"><span class="pub-topic">医学报告生成/上下文记忆</span><span class="pub-venue">吉林大学学报（工学版）</span><span class="pub-venue highlight"><i class="fas fa-star"></i><i class="fas fa-star"></i> 中文核心期刊-EI</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学报告生成/上下文记忆</span>
+                    <span class="pub-venue">吉林大学学报（工学版）</span>
+                    <span class="pub-venue highlight">中文核心期刊-EI</span>
+                </div>
             </div>
         </article>
 
@@ -2453,7 +2542,11 @@
             <div class="pub-content">
                 <h3 class="pub-title"><a href="http://xwxt.sict.ac.cn/CN/Y2024/V45/I3/676" target="_blank" rel="noopener">一种基于多模态特征提取的医学视觉问答方法</a></h3>
                 <div class="pub-authors">吴松泽; <span class="font-bold">刘利军(*)</span>; 黄青松；孔凡彦；张云峰; 刘骊; 付晓东.</div>
-                <div class="pub-tags"><span class="pub-topic">医学视觉问答/多模态融合</span><span class="pub-venue">小型微型计算机系统</span><span class="pub-venue highlight"><i class="fas fa-star"></i> 中文核心期刊, CCF-T2</span></div>
+                <div class="pub-tags">
+                    <span class="pub-topic">医学视觉问答/多模态融合</span>
+                    <span class="pub-venue">小型微型计算机系统</span>
+                    <span class="pub-venue highlight">中文核心期刊, CCF-T2</span>
+                </div>
             </div>
         </article>
       </div>
